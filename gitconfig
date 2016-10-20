@@ -1,0 +1,55 @@
+[user]
+  name = Josh Cass
+  username = joshcass
+
+[color]
+  ui = true
+
+[color "diff-highlight"]
+	oldNormal = red
+	oldHighlight = red 52
+	newNormal = green
+	newHighlight = green 22
+
+[color "diff"]
+  meta = yellow
+  commit = green
+  frag = magenta
+  old = red
+  new = green
+  whitespace = red reverse
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "status"]
+  added = yellow
+  changed = red
+  untracked = cyan
+
+[core]
+  autocrlf = input
+  safecrlf = true
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore-global
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+
+[push]
+  default = upstream
+
+[alias]
+  co = checkout
+  br = branch
+  p = push
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  cara = commit --amend --reset-author
+  email-guess = !. ~/.git-scripts/email-guess.sh
+
+[commit]
+	gpgsign = true
