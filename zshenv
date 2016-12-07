@@ -4,7 +4,9 @@ export GOPATH=~/.go_path
 
 export EDITOR=/usr/bin/vim
 
-source ~/.dotfiles.d/secrets
+export DOTFILES=~/.dotfiles.d
+
+source $DOTFILES/secrets
 
 if [ -f "${HOME}/.gpg-agent-info" ]; then
   . "${HOME}/.gpg-agent-info"

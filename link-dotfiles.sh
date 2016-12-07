@@ -12,4 +12,9 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+##### Create secrets file #####
+
+touch $dir/secrets
+
+
 echo "Done"

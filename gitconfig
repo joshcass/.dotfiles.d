@@ -6,10 +6,10 @@
   ui = true
 
 [color "diff-highlight"]
-	oldNormal = red
-	oldHighlight = red 52
-	newNormal = green
-	newHighlight = green 22
+  oldNormal = red
+  oldHighlight = red 52
+  newNormal = green
+  newHighlight = green 22
 
 [color "diff"]
   meta = yellow
@@ -34,7 +34,7 @@
   safecrlf = true
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore-global
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+  pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 
 [push]
   default = upstream
@@ -52,4 +52,4 @@
   email-guess = !. ~/.git-scripts/email-guess.sh
 
 [commit]
-	gpgsign = true
+  gpgsign = true
