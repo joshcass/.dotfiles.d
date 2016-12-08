@@ -1,23 +1,3 @@
-####################### Functions ###########################
-
-# run emacs in the background
-function macs() {
-    command emacs $* & disown
-}
-
-# give the fullpaths of files passed in argv or piped through stdin
-function fullpath {
-    ruby -e '
-    $stdin.each_line { |path| puts File.expand_path path }  if ARGV.empty?
-    ARGV.each { |path| puts File.expand_path path }         unless ARGV.empty?
-  ' "$@"
-}
-
-# Take you to the dir of a file in a gem. e.g. `2gem rspec`
-function 2gem () {
-    cd "$(dirname $(gem which $1))"
-}
-
 ###################### Aliases ##############################
 
 # Bash aliases
@@ -29,6 +9,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias wings="pmset noidle"
+alias m="macs"
+alias mm="macs ."
 
 # Git aliases
 alias gc="git checkout"
@@ -50,14 +32,11 @@ alias rs="rspec"
 alias c="rails c"
 alias ss="spring stop"
 alias mg="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias be="bundle exec"
+alias bn="bundle"
 
 # Elixir/Phoenix aliases
 alias eli="elixir"
-alias m="mix"
-
-# Bundler aliases
-alias be="bundle exec"
-alias bn="bundle"
 
 # fancy ls commands
 # -l  long format

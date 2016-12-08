@@ -5,90 +5,71 @@ on run argv
 	else
 		set tint to "dark"
 	end if
-
+	
 	if (count of argv) is not equal to 0 and (item 1 of argv as string) is not equal to "" then
 		set tint to (item 1 of argv as string)
 	end if
-
+	
 	tell application "iTerm"
 		activate
-		set t to current terminal
-		try
-			get t
-		on error
-			set t to (make new terminal)
-		end try
-
-		repeat with t in terminals
-			tell t
 				repeat with s in sessions
 					try
 						get s
 					on error
 						set s to launch session "Default Session"
 					end try
-
+					
 					tell s
 						if tint is "light" then
-              set ansiWhiteColor to {60037.3085937500, 58326.9609375000, 52284.5468750000}
-              set link color to {1507.3050537109, 17694.4511718750, 44432.7265625000}
-              set selected text color to {18134.8398437500, 23373.6835937500, 25098.9140625000}
-              set cursor_text color to {60037.3085937500, 58326.9609375000, 52284.5468750000}
-              set ansiBrightWhiteColor to {64842.5703125000, 62778.8554687500, 56626.1601562500}
-              set ansiGreenColor to {29475.9746093750, 35464.5859375000, 1324.3807373047}
-              set ansiBrightBlackColor to {0.0000000000, 7722.3891601562, 9941.8388671875}
-              set ansiBrightYellowColor to {21257.3378906250, 26684.3281250000, 28737.4667968750}
-              set bold color to {18134.8398437500, 23373.6835937500, 25098.9140625000}
-              set ansiYellowColor to {42431.6015625000, 30638.5468750000, 1539.0771484375}
-              set ansiBrightRedColor to {48611.4101562500, 13975.5361328125, 4818.8168945312}
-              set ansiBrightCyanColor to {33160.1796875000, 37017.9921875000, 36937.9218750000}
-              set background color to {64842.5703125000, 62778.8554687500, 56626.1601562500}
-              set ansiBrightGreenColor to {18134.8398437500, 23373.6835937500, 25098.9140625000}
-              set ansiBlueColor to {8358.9130859375, 30320.3886718750, 51268.9609375000}
-              set cursor color to {21257.3378906250, 26684.3281250000, 28737.4667968750}
-              set cursor guide color to {42597.7500000000, 59636.8515625000, 65535.0000000000}
-              set ansiBrightMagentaColor to {22805.2851562500, 22213.9375000000, 47780.5429687500}
-              set ansiMagentaColor to {50946.2148437500, 7079.3945312500, 28518.6269531250}
-              set badge color to {65535.0000000000, 0.0000000000, 0.0000000000}
-              set ansiBlackColor to {0.0000000000, 10207.6835937500, 12694.2207031250}
-              set ansiCyanColor to {9620.2333984375, 37408.9257812500, 34407.3671875000}
-              set selection color to {60037.3085937500, 58326.9609375000, 52284.5468750000}
-              set ansiBrightBlueColor to {28873.4257812500, 33398.5585937500, 33872.2890625000}
-              set foreground color to {21257.3378906250, 26684.3281250000, 28737.4667968750}
-              set ansiRedColor to {53690.8476562500, 7104.4169921875, 9270.3925781250}
+							set ansiWhiteColor to {6.003730859375E+4, 5.83269609375E+4, 5.2284546875E+4}
+							set selected text color to {1.813483984375E+4, 2.337368359375E+4, 2.50989140625E+4}
+							set ansiBrightWhiteColor to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
+							set ansiGreenColor to {2.9475974609375E+4, 3.54645859375E+4, 1324.3807373047}
+							set ansiBrightBlackColor to {0.0, 7722.3891601562, 9941.8388671875}
+							set ansiBrightYellowColor to {2.1257337890625E+4, 2.6684328125E+4, 2.8737466796875E+4}
+							set bold color to {1.813483984375E+4, 2.337368359375E+4, 2.50989140625E+4}
+							set ansiYellowColor to {4.24316015625E+4, 3.0638546875E+4, 1539.0771484375}
+							set ansiBrightRedColor to {4.861141015625E+4, 1.39755361328125E+4, 4818.8168945312}
+							set ansiBrightCyanColor to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
+							set background color to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
+							set ansiBrightGreenColor to {1.813483984375E+4, 2.337368359375E+4, 2.50989140625E+4}
+							set ansiBlueColor to {8358.9130859375, 3.0320388671875E+4, 5.12689609375E+4}
+							set cursor color to {2.1257337890625E+4, 2.6684328125E+4, 2.8737466796875E+4}
+							set ansiBrightMagentaColor to {2.280528515625E+4, 2.22139375E+4, 4.778054296875E+4}
+							set ansiMagentaColor to {5.094621484375E+4, 7079.39453125, 2.8518626953125E+4}
+							set ansiBlackColor to {0.0, 1.020768359375E+4, 1.2694220703125E+4}
+							set ansiCyanColor to {9620.2333984375, 3.740892578125E+4, 3.44073671875E+4}
+							set selection color to {6.003730859375E+4, 5.83269609375E+4, 5.2284546875E+4}
+							set ansiBrightBlueColor to {2.887342578125E+4, 3.339855859375E+4, 3.38722890625E+4}
+							set foreground color to {2.1257337890625E+4, 2.6684328125E+4, 2.8737466796875E+4}
+							set ansiRedColor to {5.369084765625E+4, 7104.4169921875, 9270.392578125}
 						else
-              set ansiWhiteColor to {60037.3085937500, 58326.9609375000, 52284.5468750000}
-              set link color to {1507.3050537109, 17694.4511718750, 44432.7265625000}
-              set selected text color to {33160.1796875000, 37017.9921875000, 36937.9218750000}
-              set cursor_text color to {0.0000000000, 10207.6835937500, 12694.2207031250}
-              set ansiBrightWhiteColor to {64842.5703125000, 62778.8554687500, 56626.1601562500}
-              set ansiGreenColor to {29475.9746093750, 35464.5859375000, 1324.3807373047}
-              set ansiBrightBlackColor to {0.0000000000, 7722.3891601562, 9941.8388671875}
-              set ansiBrightYellowColor to {21257.3378906250, 26684.3281250000, 28737.4667968750}
-              set bold color to {33160.1796875000, 37017.9921875000, 36937.9218750000}
-              set ansiYellowColor to {42431.6015625000, 30638.5468750000, 1539.0771484375}
-              set ansiBrightRedColor to {48611.4101562500, 13975.5361328125, 4818.8168945312}
-              set ansiBrightCyanColor to {33160.1796875000, 37017.9921875000, 36937.9218750000}
-              set background color to {0.0000000000, 7722.3891601562, 9941.8388671875}
-              set ansiBrightGreenColor to {18134.8398437500, 23373.6835937500, 25098.9140625000}
-              set ansiBlueColor to {8358.9130859375, 30320.3886718750, 51268.9609375000}
-              set cursor color to {28873.4257812500, 33398.5585937500, 33872.2890625000}
-              set cursor guide color to {42597.7500000000, 59636.8515625000, 65535.0000000000}
-              set ansiBrightMagentaColor to {22805.2851562500, 22213.9375000000, 47780.5429687500}
-              set ansiMagentaColor to {50946.2148437500, 7079.3945312500, 28518.6269531250}
-              set badge color to {65535.0000000000, 0.0000000000, 0.0000000000}
-              set ansiBlackColor to {0.0000000000, 10207.6835937500, 12694.2207031250}
-              set ansiCyanColor to {9620.2333984375, 37408.9257812500, 34407.3671875000}
-              set selection color to {0.0000000000, 10207.6835937500, 12694.2207031250}
-              set ansiBrightBlueColor to {28873.4257812500, 33398.5585937500, 33872.2890625000}
-              set foreground color to {48056.3671875000, 48054.9296875000, 48055.7421875000}
-              set ansiRedColor to {53690.8437500000, 7104.4233398438, 9270.3935546875}
-            end if
+							set ansiWhiteColor to {6.003730859375E+4, 5.83269609375E+4, 5.2284546875E+4}
+							set selected text color to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
+							set ansiBrightWhiteColor to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
+							set ansiGreenColor to {2.9475974609375E+4, 3.54645859375E+4, 1324.3807373047}
+							set ansiBrightBlackColor to {0.0, 7722.3891601562, 9941.8388671875}
+							set ansiBrightYellowColor to {2.1257337890625E+4, 2.6684328125E+4, 2.8737466796875E+4}
+							set bold color to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
+							set ansiYellowColor to {4.24316015625E+4, 3.0638546875E+4, 1539.0771484375}
+							set ansiBrightRedColor to {4.861141015625E+4, 1.39755361328125E+4, 4818.8168945312}
+							set ansiBrightCyanColor to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
+							set background color to {0.0, 7722.3891601562, 9941.8388671875}
+							set ansiBrightGreenColor to {1.813483984375E+4, 2.337368359375E+4, 2.50989140625E+4}
+							set ansiBlueColor to {8358.9130859375, 3.0320388671875E+4, 5.12689609375E+4}
+							set cursor color to {2.887342578125E+4, 3.339855859375E+4, 3.38722890625E+4}
+							set ansiBrightMagentaColor to {2.280528515625E+4, 2.22139375E+4, 4.778054296875E+4}
+							set ansiMagentaColor to {5.094621484375E+4, 7079.39453125, 2.8518626953125E+4}
+							set ansiBlackColor to {0.0, 1.020768359375E+4, 1.2694220703125E+4}
+							set ansiCyanColor to {9620.2333984375, 3.740892578125E+4, 3.44073671875E+4}
+							set selection color to {0.0, 1.020768359375E+4, 1.2694220703125E+4}
+							set ansiBrightBlueColor to {2.887342578125E+4, 3.339855859375E+4, 3.38722890625E+4}
+							set foreground color to {4.80563671875E+4, 4.80549296875E+4, 4.80557421875E+4}
+							set ansiRedColor to {5.369084375E+4, 7104.4233398438, 9270.3935546875}
+						end if
 					end tell
 				end repeat
 			end tell
-		end repeat
-	end tell
-
+	
 	return
 end run

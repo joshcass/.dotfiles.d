@@ -1,0 +1,4 @@
+# run emacs in the background
+function macs() {
+  command emacs $* & disown
+}
