@@ -25,6 +25,7 @@ alias gka="git commit -a"
 alias gk="git commit"
 alias gp="git push"
 alias gl="git log"
+alias gu="git unwip"
 
 # Ruby/Rails aliases
 alias rt="rake test"
