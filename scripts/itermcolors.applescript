@@ -5,7 +5,7 @@
 *)
 
 set h to hours of (current date)
-if (h > 7) and (h < 19) then
+if (h > 7) and (h < 16) then
 	set tint to "light"
 else
 	set tint to "dark"
@@ -19,14 +19,14 @@ tell application "iTerm"
 	on error
 		set w to (create window with default profile)
 	end try
-	
+
 	tell w
 		repeat with t in tabs
 			tell t
 				repeat with s in sessions
 					tell s
 						if tint is "light" then
-							
+
 							set background color to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
 							set bold color to {1.813483984375E+4, 2.337368359375E+4, 2.50989140625E+4}
 							set cursor color to {2.1257337890625E+4, 2.6684328125E+4, 2.8737466796875E+4}
@@ -50,9 +50,9 @@ tell application "iTerm"
 							set ansiBrightMagentaColor to {2.280528515625E+4, 2.22139375E+4, 4.778054296875E+4}
 							set ansiBrightCyanColor to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
 							set ansiBrightWhiteColor to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
-							
+
 						else
-							
+
 							set background color to {0.0, 7722.3891601562, 9941.8388671875}
 							set bold color to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
 							set cursor color to {2.887342578125E+4, 3.339855859375E+4, 3.38722890625E+4}
@@ -76,7 +76,7 @@ tell application "iTerm"
 							set ansiBrightMagentaColor to {2.280528515625E+4, 2.22139375E+4, 4.778054296875E+4}
 							set ansiBrightCyanColor to {3.31601796875E+4, 3.70179921875E+4, 3.6937921875E+4}
 							set ansiBrightWhiteColor to {6.48425703125E+4, 6.277885546875E+4, 5.662616015625E+4}
-							
+
 						end if
 					end tell
 				end repeat
