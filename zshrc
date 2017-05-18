@@ -9,8 +9,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias wings="pmset noidle"
-alias m="macs"
-alias mm="macs ."
+alias m="emacsclient -c -n"
+alias mm="emacsclient -c -n ."
+alias clr="colorize"
+
+# Dokku alias
+alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
 
 # Git aliases
 alias gc="git checkout"
