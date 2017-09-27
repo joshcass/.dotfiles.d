@@ -39,6 +39,7 @@ alias ss="spring stop"
 alias mg="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias be="bundle exec"
 alias bn="bundle"
+alias cu="cucumber"
 
 # Elixir/Phoenix aliases
 alias eli="elixir"
