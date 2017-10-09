@@ -11,6 +11,10 @@ function s() {
     else
       rails s $*
     fi
+  elif [ -f project.clj ]; then
+    lein run
+  elif [ -f yarn.lock ]; then
+    yarn start
   else
     echo "Don't know what server to start. :("
     return 1
