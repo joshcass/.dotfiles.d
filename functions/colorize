@@ -1,3 +1,0 @@
-colorize(){
-  osascript $DOTFILES/scripts/apple/itermcolors.applescript
-}

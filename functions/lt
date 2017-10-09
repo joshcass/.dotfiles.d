@@ -1,0 +1,3 @@
+lt(){
+  osascript $DOTFILES/scripts/apple/itermcolors.applescript light
+}
