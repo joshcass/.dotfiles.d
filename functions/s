@@ -1,0 +1,18 @@
+function s() {
+  if [ -f ember-cli-build.js ]; then
+    ember s $*
+  elif [ -f mix.exs ]; then
+    iex -S mix phoenix.server
+  elif [ -f ionic.config.json ]; then
+    ionic serve
+  elif [ -f Gemfile ]; then
+    if  grep --quiet middleman Gemfile; then
+      middleman s $*
+    else
+      rails s $*
+    fi
+  else
+    echo "Don't know what server to start. :("
+    return 1
+  fi
+}

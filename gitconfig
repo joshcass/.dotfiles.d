@@ -49,7 +49,7 @@
   unstage = reset HEAD --
   last = log -1 HEAD
   cara = commit --amend --reset-author
-  email-guess = !. ~/.git-scripts/email-guess.sh
+  email-guess = !. $DOTFILES/git/scripts/email-guess.sh
   unwip = reset HEAD~
 
 [commit]

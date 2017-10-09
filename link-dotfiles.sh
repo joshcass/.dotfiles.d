@@ -3,7 +3,7 @@
 ###### Variables ######
 
 dir=~/.dotfiles.d
-files="rspec git-scripts gitconfig gitignore-global jsbeautifyrc vimrc zlogin zshenv zshrc"
+files="rspec gitconfig gitignore-global jsbeautifyrc vimrc zlogin zshenv zshrc"
 
 ##### Create Links #####
 

@@ -1,0 +1,13 @@
+#!/bin/sh
+# simple hook to check if a repo has just been freshly
+# cloned.
+#
+# If so, it then runs my handy email-guess git script
+# and tries to set the correct email for the repo
+#
+# see this awesoeme blog post
+# http://willi.am/blog/2015/02/27/dynamically-configure-your-git-email/
+
+if [[ $1 == 00000000000* ]]; then
+  git email-guess
+fi

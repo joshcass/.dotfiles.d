@@ -1,12 +1,18 @@
+typeset -U path
+
+export DOTFILES=~/.dotfiles.d
+
 export NVM_DIR=~/.nvm
 
 export GOPATH=~/.go_path
 
 export EDITOR=/usr/bin/vim
 
-export DOTFILES=~/.dotfiles.d
-
 source $DOTFILES/secrets
+
+path+=$DOTFILES/scripts/bash
+
+fpath=($DOTFILES/functions $fpath)
 
 if [ -f "${HOME}/.gpg-agent-info" ]; then
   . "${HOME}/.gpg-agent-info"
