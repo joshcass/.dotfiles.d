@@ -34,7 +34,10 @@
   safecrlf = true
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore-global
-  pager = diff-so-fancy | less --tabs=1,5 -R
+
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -R
+  show = diff-so-fancy | less --tabs=1,5 -R
 
 [push]
   default = upstream

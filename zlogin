@@ -4,6 +4,8 @@ autoload -Uz $DOTFILES/functions/*(:t)
 
 source $(brew --prefix nvm)/nvm.sh
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $DOTFILES/secrets
 
 eval "$(direnv hook zsh)"
