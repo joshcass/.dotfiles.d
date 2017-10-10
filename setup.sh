@@ -76,10 +76,10 @@ cp $dir/config/gpg-agent.conf ~/.gnupg
 
 ##### Import GPG Public Key and link keys to Yubi #####
 fancy_echo "Adding/updating GPG key from keybase.io"
-curl https://keybase.io/joshcass/key.asc | gpg2 --import
+curl https://keybase.io/joshcass/key.asc | gpg --import
 
 fancy_echo "Linking GPG keys from Yubikey smartcard"
-gpg2 --card-status
+gpg --card-status
 
 ##### Clone and install Spacemacs #####
 if [ ! -d ~/.emacs.d ]; then
