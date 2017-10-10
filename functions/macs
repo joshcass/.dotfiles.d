@@ -1,4 +1,0 @@
-# run stand-alone emacs GUI instance in the background
-function macs() {
-  command emacs $* & disown
-}

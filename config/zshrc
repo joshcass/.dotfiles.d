@@ -11,7 +11,7 @@ alias ....="cd ../../.."
 alias wings="pmset noidle"
 alias m="emacsclient -c -n"
 alias mm="emacsclient -c -n ."
-alias clr="colorize"
+alias macs="emacs --daemon"
 
 # Dokku alias
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
