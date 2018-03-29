@@ -69,6 +69,9 @@ for file in $files; do
     ln -s $dir/config/$file ~/.$file
 done
 
+fancy_echo "Creating symlink for iCloud"
+ln -s ~/Library/Mobile Documents/com~apple~CloudDocs ~/iCloud
+
 ##### Copy GPG-Agent #####
 fancy_echo "Copying GPG Agent conf"
 
