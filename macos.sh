@@ -630,6 +630,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
+# Allow NAS to show up for use in Time Macine
+defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
+
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
