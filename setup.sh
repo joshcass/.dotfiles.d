@@ -32,6 +32,7 @@ brew tap homebrew/bundle
 brew bundle
 fancy_echo "Cleaning up Homebrew"
 brew cleanup
+brew cask cleanup
 
 #### Make sure ZSH is set as the shell #####
 update_shell() {
