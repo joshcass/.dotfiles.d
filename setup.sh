@@ -72,17 +72,17 @@ done
 fancy_echo "Creating symlink for iCloud"
 ln -s ~/Library/Mobile Documents/com~apple~CloudDocs ~/iCloud
 
-##### Copy GPG-Agent #####
-fancy_echo "Copying GPG Agent conf"
-
-cp $dir/config/gpg-agent.conf ~/.gnupg
-
 ##### Import GPG Public Key and link keys to Yubi #####
 fancy_echo "Adding/updating GPG key from keybase.io"
 curl https://keybase.io/joshcass/key.asc | gpg --import
 
 fancy_echo "Linking GPG keys from Yubikey smartcard"
 gpg --card-status
+
+##### Copy GPG-Agent #####
+fancy_echo "Copying GPG Agent conf"
+
+cp $dir/config/gpg-agent.conf ~/.gnupg/
 
 ##### Clone and install Spacemacs #####
 if [ ! -d ~/.emacs.d ]; then
