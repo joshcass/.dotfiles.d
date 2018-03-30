@@ -70,7 +70,7 @@ for file in $files; do
 done
 
 fancy_echo "Creating symlink for iCloud"
-ln -s ~/Library/Mobile Documents/com~apple~CloudDocs ~/iCloud
+ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
 
 ##### Import GPG Public Key and link keys to Yubi #####
 fancy_echo "Adding/updating GPG key from keybase.io"
