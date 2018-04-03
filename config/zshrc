@@ -9,9 +9,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias wings="pmset noidle"
-alias m="emacsclient -c -n"
-alias mm="emacsclient -c -n ."
-alias macs="emacs --daemon"
+alias m="emacsclient -n"
+alias mm="emacsclient -n ."
+alias rmacs="brew services restart emacs-plus"
 
 # Dokku alias
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
