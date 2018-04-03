@@ -96,6 +96,7 @@ fi
 if [ ! -d ~/.spacemacs.d ]; then
     fancy_echo "Cloning .spacemacs.d into ~/.spacemacs.d"
     git clone https://github.com/joshcass/.spacemacs.d.git ~/.spacemacs.d
+    touch ~/.spacemacs.d/custom.el
 else
     fancy_echo "~/.spacemacs.d already exists. Not cloning."
 fi
