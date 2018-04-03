@@ -44,3 +44,6 @@ Thumbs.db
 
 # emacs autosave file
 .#*.*
+
+# ctags
+TAGS
