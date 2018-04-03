@@ -5,6 +5,7 @@ alias dev="cd ~/dev"
 alias study="cd ~/dev/2_study"
 alias projects="cd ~/dev/1_projects"
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias cdr='cd $(git rev-parse --show-toplevel)'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
