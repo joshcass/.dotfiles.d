@@ -11,8 +11,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias wings="pmset noidle"
 alias m="emacsclient -n"
-alias nm="emacsclient -c -n ."
 alias mm="emacsclient -n ."
+alias mmm="emacsclient -c -n ."
 alias rmacs="brew services restart emacs-plus"
 
 # Dokku alias
