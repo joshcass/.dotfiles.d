@@ -1,3 +1,0 @@
-dt(){
-  osascript $DOTFILES/scripts/apple/itermcolors.applescript dark
-}

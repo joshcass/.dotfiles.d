@@ -1,7 +1,0 @@
-function brewski() {
-  brew update &&
-  brew upgrade &&
-  brew cleanup &&
-  brew prune &&
-  link-git-hooks
-}

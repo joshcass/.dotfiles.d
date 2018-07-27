@@ -6,8 +6,3 @@ export GOPATH=~/.go_path
 
 export EDITOR=/usr/bin/vim
 
-if [ -d "${HOME}/.gnupg" ]; then
-  export GPG_TTY=$(tty)
-  export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
-fi
-

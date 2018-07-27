@@ -1,0 +1,4 @@
+heroku
+mailspring
+bitwarden
+android-studio

@@ -2,11 +2,13 @@ autoload -U compinit && compinit
 
 autoload -Uz $DOTFILES/functions/*(:t)
 
-source $(brew --prefix nvm)/nvm.sh
+source $NVM_DIR/nvm.sh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $DOTFILES/secrets
+
+source /etc/zsh_command_not_found
 
 eval "$(direnv hook zsh)"
 

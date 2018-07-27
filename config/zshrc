@@ -4,16 +4,14 @@
 alias dev="cd ~/dev"
 alias study="cd ~/dev/2_study"
 alias projects="cd ~/dev/1_projects"
-alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias wings="pmset noidle"
-alias m="emacsclient -n"
-alias mm="emacsclient -n ."
-alias mmm="emacsclient -c -n ."
-alias rmacs="brew services restart emacs-plus"
+alias pbcopy='xsel --clipboard --input'
+alias m="emacsclient -c ."
+alias mm="emacsclient -c -n ."
+alias macs="emacs --daemon"
 
 # Dokku alias
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
@@ -44,7 +42,7 @@ alias bn="bundle"
 alias cu="cucumber"
 
 # Elixir/Phoenix aliases
-alias eli="elixir"
+alias elx="elixir"
 
 # fancy ls commands
 # -l  long format
@@ -54,7 +52,7 @@ alias eli="elixir"
 # -o suppress group
 # -h humanize sizes
 # -q print nongraphic chars as question marks
-alias l="ls -lFGgohq"
+alias ll="ls -lFGgohq"
 alias ls="ls -GFh"
 alias la="ls -GFha"
 
@@ -76,7 +74,7 @@ function parse_git_branch {
 function parse_git_color {
     gstatus=`git status 2>/dev/null`
     if [[ $gstatus = "" ]]; then
-        GIT_COLOR=("m" "")
+        GIT_COLOR=("36m" "")
     elif [[ ! $gstatus =~ "working tree clean" ]]; then
         GIT_COLOR=("101m" "91m")
     elif [[ $gstatus =~ "Your branch is ahead of" ]]; then
@@ -137,8 +135,8 @@ function build_prompt {
 
     ps1="${ps1}${NEWLINE}"
 
-    # emoji prompt
-    ps1="${ps1}🍺  "
+    # prompt
+    ps1="${ps1}λ "
 
     # set prompt output
     PS1="$ps1"

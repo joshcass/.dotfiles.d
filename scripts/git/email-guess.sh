@@ -6,8 +6,8 @@
 remote=`git remote -v | awk '/\(push\)$/ {print $2}'`
 email=hello@joshcass.com # default
 
-if [[ $remote == *github.com:COMPANY* ]]; then
-    email=COMPANY EMAIL
+if [[ $remote == *github.com:bonusly* ]]; then
+    email=josh@bonus.ly
 fi
 
 echo "Configuring user.email as $email"

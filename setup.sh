@@ -11,28 +11,24 @@ fancy_echo() {
 
 dir=~/.dotfiles.d
 
-##### Install Xcode CLT if not already #####
-if [ ! -x "$(command -v xcode-select)" ]; then
-    fancy_echo "Installing Xcode CLT"
-    xcode-select --install
-fi
+#### Install packages #####
+sudo true
 
-##### Install homebrew if not already #####
-if [ ! -x "$(command -v brew)" ]; then
-    fancy_echo "Installng Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+fancy_echo "Adding and installing packages from custom PPA's"
+sh $dir/setup/ppas.sh
 
-##### Install deps with brew ####
-cd $dir
-fancy_echo "Updating Homebrew"
-brew update
-fancy_echo "Bundling Brewfile"
-brew tap homebrew/bundle
-brew bundle
-fancy_echo "Cleaning up Homebrew"
-brew cleanup
-brew cask cleanup
+fancy_echo "Installing packages through apt"
+sudo apt-get update
+xargs -a $dir/setup/apt-packages.txt sudo apt-get install
+
+fancy_echo "Installing snaps"
+xargs -a $dir/setup/snaps.txt sudo snap install
+
+fancy_echo "Installing global NPM packages"
+xargs -a $dir/setup/npm-packages.txt sudo npm install -g
+
+fancy_echo "Cloning packages installed via git"
+sh $dir/setup/git-clones.sh
 
 #### Make sure ZSH is set as the shell #####
 update_shell() {
@@ -49,7 +45,7 @@ update_shell() {
 
 case "$SHELL" in
     */zsh)
-        if [ "$(which zsh)" != '/usr/local/bin/zsh' ] ; then
+        if [ "$(which zsh)" != '/usr/bin/zsh' ] ; then
             update_shell
         fi
         ;;
@@ -70,9 +66,6 @@ for file in $files; do
     ln -s $dir/config/$file ~/.$file
 done
 
-fancy_echo "Creating symlink for iCloud"
-ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
-
 ##### Import GPG Public Key and link keys to Yubi #####
 fancy_echo "Adding/updating GPG key from keybase.io"
 curl https://keybase.io/joshcass/key.asc | gpg --import
@@ -80,32 +73,31 @@ curl https://keybase.io/joshcass/key.asc | gpg --import
 fancy_echo "Linking GPG keys from Yubikey smartcard"
 gpg --card-status
 
-##### Copy GPG-Agent #####
-fancy_echo "Copying GPG Agent conf"
-
-cp $dir/config/gpg-agent.conf ~/.gnupg/
+##### Configure GPG Agent for use as SSH Agent #####
+fancy_echo "Configring GPG Agent for use as SSH Agent"
+sh $dir/setup/gpg-agent-config.sh
 
 ##### Clone and install Spacemacs #####
+fancy_echo "Cloning Spacemacs"
 if [ ! -d ~/.emacs.d ]; then
-    fancy_echo "Cloning Spacemacs repo into ~/.emacs.d"
+    echo "Cloning Spacemacs repo into ~/.emacs.d"
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 else
-    fancy_echo "~/.emacs.d already exists. Not cloning."
+    echo "~/.emacs.d already exists. Not cloning."
 fi
 
+fancy_echo "Cloning Spacemacs config"
 if [ ! -d ~/.spacemacs.d ]; then
-    fancy_echo "Cloning .spacemacs.d into ~/.spacemacs.d"
+    echo "Cloning .spacemacs.d into ~/.spacemacs.d"
     git clone https://github.com/joshcass/.spacemacs.d.git ~/.spacemacs.d
     touch ~/.spacemacs.d/custom.el
 else
-    fancy_echo "~/.spacemacs.d already exists. Not cloning."
+    echo "~/.spacemacs.d already exists. Not cloning."
 fi
 
 #### Install some useful heroku things ####
-if [ ! "heroku accounts" ]; then
-    fancy_echo "Installing heroku plugins"
-    heroku plugins:install heroku-accounts
-fi
+fancy_echo "Installing heroku plugins"
+heroku plugins:install heroku-accounts
 
 ##### Create secrets file #####
 fancy_echo "Ensuring secrets file"
