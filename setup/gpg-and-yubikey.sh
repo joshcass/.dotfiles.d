@@ -37,5 +37,11 @@ update_gpg_agent() {
     fi
 }
 
+echo "Adding/updating GPG key from keybase.io"
+curl https://keybase.io/joshcass/key.asc | gpg --import
+
+echo "Linking GPG keys from Yubikey smartcard"
+gpg --card-status
+
 disable_gnome_keyring_autostart
 update_gpg_agent

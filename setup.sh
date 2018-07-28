@@ -11,95 +11,40 @@ fancy_echo() {
 
 dir=~/.dotfiles.d
 
-#### Install packages #####
 sudo true
 
 fancy_echo "Adding and installing packages from custom PPA's"
 sh $dir/setup/ppas.sh
 
-fancy_echo "Installing packages through apt"
+fancy_echo "Installing packages through Apt"
 sudo apt-get update
-xargs -a $dir/setup/apt-packages.txt sudo apt-get install
+xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
 
-fancy_echo "Installing snaps"
+fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
 
 fancy_echo "Installing global NPM packages"
 xargs -a $dir/setup/npm-packages.txt sudo npm install -g
 
-fancy_echo "Cloning packages installed via git"
+fancy_echo "Cloning packages installed via Git"
 sh $dir/setup/git-clones.sh
 
-#### Make sure ZSH is set as the shell #####
-update_shell() {
-    local shell_path;
-    shell_path="$(which zsh)"
-
-    fancy_echo "Changing shell to zsh"
-    if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
-        fancy_echo "Adding '$shell_path' to /etc/shells"
-        sudo sh -c "echo $shell_path >> /etc/shells"
-    fi
-    sudo chsh -s "$shell_path" "$USER"
-}
-
-case "$SHELL" in
-    */zsh)
-        if [ "$(which zsh)" != '/usr/bin/zsh' ] ; then
-            update_shell
-        fi
-        ;;
-    *)
-        update_shell
-        ;;
-esac
-
-##### Create Links #####
-files="rspec pryrc gitconfig gitignore-global jsbeautifyrc vimrc zlogin zshenv zshrc"
+fancy_echo "Setting Zsh as shell"
+sh $dir/setup/update-shell.sh
 
 fancy_echo "Creating symlinks for dotfiles"
+echo "Removing existing symlinks"
+ls $dir/config | xargs -L 1 -I{} rm ~/.{}
 
-for file in $files; do
-    echo "Removing existing .$file"
-    rm ~/.$file
-    echo "Creating new symlink for .$file"
-    ln -s $dir/config/$file ~/.$file
-done
+echo "Creating new symlinks"
+ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
 
-##### Import GPG Public Key and link keys to Yubi #####
-fancy_echo "Adding/updating GPG key from keybase.io"
-curl https://keybase.io/joshcass/key.asc | gpg --import
+fancy_echo "Configuring GPG and Yubikey"
+sh $dir/setup/gpg-and-yubikey.sh
 
-fancy_echo "Linking GPG keys from Yubikey smartcard"
-gpg --card-status
-
-##### Configure GPG Agent for use as SSH Agent #####
-fancy_echo "Configring GPG Agent for use as SSH Agent"
-sh $dir/setup/gpg-agent-config.sh
-
-##### Clone and install Spacemacs #####
-fancy_echo "Cloning Spacemacs"
-if [ ! -d ~/.emacs.d ]; then
-    echo "Cloning Spacemacs repo into ~/.emacs.d"
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-else
-    echo "~/.emacs.d already exists. Not cloning."
-fi
-
-fancy_echo "Cloning Spacemacs config"
-if [ ! -d ~/.spacemacs.d ]; then
-    echo "Cloning .spacemacs.d into ~/.spacemacs.d"
-    git clone https://github.com/joshcass/.spacemacs.d.git ~/.spacemacs.d
-    touch ~/.spacemacs.d/custom.el
-else
-    echo "~/.spacemacs.d already exists. Not cloning."
-fi
-
-#### Install some useful heroku things ####
 fancy_echo "Installing heroku plugins"
-heroku plugins:install heroku-accounts
+xargs -a $dir/setup/heroku-plugins.txt heroku plugins:install
 
-##### Create secrets file #####
 fancy_echo "Ensuring secrets file"
 touch $dir/secrets
 
