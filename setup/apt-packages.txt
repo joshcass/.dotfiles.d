@@ -13,6 +13,7 @@ imagemagick
 jpegoptim
 leiningen
 libcurl4-openssl-dev
+libpq-dev
 markdown
 network-manager-openvpn-gnome
 npm
