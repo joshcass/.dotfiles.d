@@ -8,6 +8,7 @@ docker
 emacs
 encfs
 fonts-hack-ttf
+gnome-sushi
 jpegoptim
 leiningen
 markdown
