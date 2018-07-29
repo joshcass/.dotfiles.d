@@ -38,7 +38,18 @@ clone_dot_spacemacs() {
     fi
 }
 
+clone_ruby_build() {
+    if [ "$(command -v rbenv)" ] && [ ! -d "$(rbenv root)"/plugins ]; then
+    echo "Cloning and installing ruby-build as rbenv plugin"
+    mkdir -p "$(rbenv root)"/plugins
+    git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  else
+    echo "ruby-build is already installed or rbenv is not installed"
+  fi
+}
+
 clone_nvm
 clone_dokku
 clone_spacemacs
 clone_dot_spacemacs
+clone_ruby_build

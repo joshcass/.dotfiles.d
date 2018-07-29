@@ -9,15 +9,16 @@ emacs
 encfs
 fonts-hack-ttf
 gnome-sushi
+imagemagick
 jpegoptim
 leiningen
+libcurl4-openssl-dev
 markdown
 network-manager-openvpn-gnome
 npm
 pcscd
 postgresql
 rbenv
-ruby-build
 scdaemon
 silversearcher-ag
 snapd
@@ -26,5 +27,6 @@ vim
 wget
 xsel
 yarn
+zlib1g-dev
 zsh
 zsh-syntax-highlighting

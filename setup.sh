@@ -16,7 +16,7 @@ sudo true
 fancy_echo "Adding and installing packages from custom PPA's"
 sh $dir/setup/ppas.sh
 
-fancy_echo "Installing packages through Apt"
+fancy_echo "Installing packages via Apt"
 sudo apt-get update
 xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
 
