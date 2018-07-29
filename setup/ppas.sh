@@ -4,14 +4,14 @@ install_parity() {
         wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
         echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
         sudo apt update
-        sudo apt install parity
+        sudo apt install parity -y
     else
         echo "Thoughbot Parity already installed"
     fi
 }
 
 install_keybase() {
-    if [ ! "keybase" ]; then
+    if [ ! -x "$(command -v keybase)" ]; then
         echo "Installing Keybase"
         curl -O https://prerelease.keybase.io/keybase_amd64.deb
         sudo dpkg -i keybase_amd64.deb
