@@ -22,6 +22,7 @@ xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
 
 fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
+xargs -L 1 -a $dir/setup/classic-snaps.txt sudo snap install --classic
 
 fancy_echo "Installing global NPM packages"
 xargs -a $dir/setup/npm-packages.txt sudo npm install -g
