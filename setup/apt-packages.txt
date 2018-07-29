@@ -27,7 +27,6 @@ tree
 vim
 wget
 xsel
-yarn
 zlib1g-dev
 zsh
 zsh-syntax-highlighting
