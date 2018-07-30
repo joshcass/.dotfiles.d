@@ -6,3 +6,18 @@ export GOPATH=~/.go_path
 
 export EDITOR=/usr/bin/vim
 
+source $NVM_DIR/nvm.sh
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $DOTFILES/secrets
+
+source /etc/zsh_command_not_found
+
+path+=$DOTFILES/scripts/bash
+
+fpath=($DOTFILES/functions $fpath)
+
+if [[ $TILIX_ID ]]; then
+    source /etc/profile.d/vte.sh
+fi
