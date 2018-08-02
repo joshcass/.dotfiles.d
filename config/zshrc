@@ -12,6 +12,7 @@ alias pbcopy='xsel --clipboard --input'
 alias m="emacsclient -c ."
 alias mm="emacsclient -c -n ."
 alias macs="emacs --daemon"
+alias say="spd-say"
 
 # Dokku alias
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
