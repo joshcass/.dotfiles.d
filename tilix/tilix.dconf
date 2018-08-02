@@ -21,11 +21,13 @@ window-style='borderless'
 list=['2b7c4080-0ddd-46c5-8f23-563fd3ba789d']
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+dim-transparency-percent=40
 foreground-color='#829395'
 rewrap-on-resize=true
-visible-name='Default'
 login-shell=true
 palette=['#063541', '#DB312E', '#849900', '#B48800', '#258AD1', '#D23581', '#29A097', '#EDE7D4', '#002A35', '#CA4A15', '#576D74', '#647A82', '#829395', '#6B70C3', '#92A0A0', '#FCF5E2']
+bold-is-bright=true
+visible-name='Default'
 badge-color-set=false
 text-blink-mode='never'
 show-scrollbar=false
@@ -34,19 +36,20 @@ cursor-colors-set=false
 highlight-colors-set=false
 use-system-font=false
 bold-color-set=false
-font='Hack 13'
+font='Hack 9'
 terminal-bell='icon'
 notify-silence-threshold=0
-cursor-blink-mode='on'
 background-color='#002A35'
 background-transparency-percent=0
-dim-transparency-percent=40
+cursor-blink-mode='on'
 use-theme-colors=false
 
 [keybindings]
 session-switch-to-next-terminal='<Alt>bracketright'
 terminal-find='<Alt>f'
 terminal-paste='<Alt>v'
+win-switch-to-next-session='Page_Down'
+win-switch-to-previous-session='Page_Up'
 session-add-right='<Primary><Shift>r'
 session-add-down='<Primary><Shift>d'
 app-new-session='<Primary><Shift>t'
