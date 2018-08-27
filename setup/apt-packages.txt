@@ -14,6 +14,7 @@ jpegoptim
 leiningen
 libcurl4-openssl-dev
 libpq-dev
+libreadline-dev
 markdown
 network-manager-openvpn-gnome
 npm
