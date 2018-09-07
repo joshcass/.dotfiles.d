@@ -1,6 +1,6 @@
 ###################### Aliases ##############################
 
-# Bash aliases
+# Shell aliases
 alias dev="cd ~/dev"
 alias study="cd ~/dev/2_study"
 alias projects="cd ~/dev/1_projects"
@@ -8,11 +8,28 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias -- -="cd -"
+alias d="dirs -v | head -10"
 alias pbcopy='xsel --clipboard --input'
 alias m="emacsclient -c ."
 alias mm="emacsclient -c -n ."
 alias macs="emacs --daemon"
 alias say="spd-say"
+alias grep="grep --color=auto"
+alias -g G="| grep -i"
+alias dotfiles="cd $DOTFILES"
+
+# fancy ls commands
+# -l  long format
+# -F  / after dirs, * after exe, @ after symlink
+# -g suppress owner
+# -o suppress group
+# -h humanize sizes
+# -q print nongraphic chars as question marks
+alias ll="ls -lFgohq --color=auto"
+alias ls="ls -Fh --color=auto"
+alias la="ls -Fha --color=auto"
+
 
 # Dokku alias
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
@@ -44,18 +61,6 @@ alias cu="cucumber"
 
 # Elixir/Phoenix aliases
 alias elx="elixir"
-
-# fancy ls commands
-# -l  long format
-# -F  / after dirs, * after exe, @ after symlink
-# -G  colorize
-# -g suppress owner
-# -o suppress group
-# -h humanize sizes
-# -q print nongraphic chars as question marks
-alias ll="ls -lFgohq --color=auto"
-alias ls="ls -Fh --color=auto"
-alias la="ls -Fha --color=auto"
 
 ####################### Prompt ##############################
 
