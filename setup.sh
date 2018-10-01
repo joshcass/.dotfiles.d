@@ -40,6 +40,10 @@ ls $dir/config | xargs -L 1 -I{} rm ~/.{}
 echo "Creating new symlinks"
 ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
 
+fancy_echo "Creating symlinks for git hooks"
+hooks_dir=$(dpkg -L git | grep -m 1 templates)/hooks
+ls $dir/git_hooks | xargs -L 1 -I{} sudo ln -s $dir/git_hooks/{} $hooks_dir/{}
+
 fancy_echo "Configuring GPG and Yubikey"
 sh $dir/setup/gpg-and-yubikey.sh
 
