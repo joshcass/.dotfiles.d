@@ -1,6 +1,6 @@
 function ip() {
-  if [ "$(ifconfig | grep 192.0)" ]; then
-    local grep_ip="$(ifconfig | grep '192\.0')"
+  if [ "$(ifconfig | grep 192.168)" ]; then
+    local grep_ip="$(ifconfig | grep '192\.168')"
   else
     local grep_ip="$(ifconfig | grep '10\.0')"
   fi

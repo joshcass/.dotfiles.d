@@ -15,6 +15,7 @@ leiningen
 libcurl4-openssl-dev
 libpq-dev
 libreadline-dev
+libssl-dev
 markdown
 network-manager-openvpn-gnome
 npm
