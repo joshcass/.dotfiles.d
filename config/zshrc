@@ -18,6 +18,7 @@ alias say="spd-say"
 alias grep="grep --color=auto"
 alias -g G="| grep -i"
 alias dotfiles="cd $DOTFILES"
+alias open="xdg-open"
 
 # fancy ls commands
 # -l  long format
@@ -48,6 +49,7 @@ alias gk="git commit"
 alias gp="git push"
 alias gl="git log"
 alias gu="git unwip"
+alias gr="git reflog"
 
 # Ruby/Rails aliases
 alias rt="rake test"
