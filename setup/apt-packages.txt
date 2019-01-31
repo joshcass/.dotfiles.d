@@ -17,8 +17,10 @@ libcurl4-openssl-dev
 libpq-dev
 libreadline-dev
 libssl-dev
+libssl1.0-dev
 markdown
 network-manager-openvpn-gnome
+nodejs-dev
 npm
 pcscd
 postgresql
@@ -26,6 +28,7 @@ rbenv
 scdaemon
 silversearcher-ag
 snapd
+tilix
 tree
 vim
 wget

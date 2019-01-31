@@ -18,7 +18,7 @@ sh $dir/setup/ppas.sh
 
 fancy_echo "Installing packages via Apt"
 sudo apt-get update
-xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
+xargs -L 1 -a $dir/setup/apt-packages.txt sudo apt-get install -y
 
 fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
@@ -39,6 +39,10 @@ ls $dir/config | xargs -L 1 -I{} rm ~/.{}
 
 echo "Creating new symlinks"
 ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
+
+fancy_echo "Loading Tilix config and color schemes"
+sh $dir/setup/tilix/load-conf.sh
+sh $dir/setup/tilix/load-schemes.sh
 
 fancy_echo "Creating symlinks for git hooks"
 hooks_dir=$(dpkg -L git | grep -m 1 templates)/hooks
