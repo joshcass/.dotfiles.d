@@ -15,6 +15,7 @@ imagemagick
 jpegoptim
 leiningen
 libcurl4-openssl-dev
+libmagickwand-dev
 libpq-dev
 libreadline-dev
 libssl-dev
