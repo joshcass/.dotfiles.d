@@ -1,6 +1,7 @@
 android-tools-adb
 awscli
 certbot
+chromium-browser
 cifs-utils
 ctags
 deluge
