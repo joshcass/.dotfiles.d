@@ -17,6 +17,7 @@
   search = <Primary>f
   split_horiz = <Primary><Shift>d
   split_vert = <Primary><Shift>r
+  toggle_zoom = <Primary><Shift>m
 [layouts]
   [[default]]
     [[[child0]]]
