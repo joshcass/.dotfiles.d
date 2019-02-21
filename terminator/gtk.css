@@ -1,0 +1,35 @@
+.terminator-terminal-window notebook {
+  border: 0px;
+}
+
+.terminator-terminal-window notebook vte-terminal {
+  padding: 0px;
+}
+
+.terminator-terminal-window notebook header  {
+  background-color: #222;
+  border-color: #222;
+}
+
+.terminator-terminal-window notebook paned {
+  background-color: black;
+}
+
+.terminator-terminal-window notebook paned separator {
+  margin: 0px;
+}
+
+.terminator-terminal-window notebook tab {
+  color: transparent;
+  background-color: #222;
+  padding: 0.5em;
+}
+
+.terminator-terminal-window notebook tab button {
+  background-color: #222;
+  color: gray;
+}
+
+.terminator-terminal-window notebook box {
+  color: transparent;
+}

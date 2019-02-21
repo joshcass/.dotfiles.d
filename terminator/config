@@ -1,0 +1,90 @@
+[global_config]
+  borderless = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 0
+  inactive_color_offset = 0.6
+  suppress_multiple_term_dialog = True
+  tab_position = bottom
+  title_font = Hack 9
+  title_hide_sizetext = True
+  title_use_system_font = False
+  window_state = fullscreen
+[keybindings]
+  cycle_next = <Primary>bracketright
+  cycle_prev = <Primary>bracketleft
+  reset = <Primary>g
+  reset_clear = <Primary>k
+  search = <Primary>f
+  split_horiz = <Primary><Shift>d
+  split_vert = <Primary><Shift>r
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = True
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 1920, 1080
+      title = /usr/bin/zsh
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None
+      last_active_term = dca555c6-7924-4f5c-80ce-24258680f336, 77ed0073-175f-449e-a4f8-44611d26f280
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 522
+      ratio = 0.509268292683
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 959
+      ratio = 0.505268703899
+      type = HPaned
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = dca555c6-7924-4f5c-80ce-24258680f336
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 5dbebd3e-521c-4eca-a925-713de97c6ab2
+    [[[terminal6]]]
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = b9546a12-79f0-4fd9-8242-afd5f619aed8
+    [[[terminal7]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 77ed0073-175f-449e-a4f8-44611d26f280
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.87
+    cursor_color = "#aaaaaa"
+    cursor_shape = underline
+    font = Hack 10
+    foreground_color = "#839496"
+    icon_bell = False
+    login_shell = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

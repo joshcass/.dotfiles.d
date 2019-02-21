@@ -40,9 +40,18 @@ ls $dir/config | xargs -L 1 -I{} rm ~/.{}
 echo "Creating new symlinks"
 ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
 
-fancy_echo "Loading Tilix config and color schemes"
-sh $dir/setup/tilix/load-conf.sh
-sh $dir/setup/tilix/load-schemes.sh
+fancty_echo "Creating symlinks for termintaor"
+echo "Ensuring directories exist"
+mkdir -p ~/.config/gtk-3.0
+mkdir -p ~/.config/terminator
+
+echo "Removing existing links or files"
+rm ~/.config/terminator/config
+rm ~/.config/gtk-3.0/gtk.css
+
+echo "Creating new symlinks"
+ln -s $dir/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
+ln -s $dir/terminator/config ~/.config/terminator/config
 
 fancy_echo "Creating symlinks for git hooks"
 hooks_dir=$(dpkg -L git | grep -m 1 templates)/hooks
