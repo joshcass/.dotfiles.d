@@ -10,6 +10,7 @@ docker
 emacs
 encfs
 fonts-hack-ttf
+fonts-symbola
 gnome-sushi
 imagemagick
 jpegoptim
