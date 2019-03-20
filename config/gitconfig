@@ -43,9 +43,6 @@
   default = upstream
 
 [alias]
-  co = checkout
-  br = branch
-  p = push
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   type = cat-file -t
   dump = cat-file -p
@@ -54,8 +51,9 @@
   cara = commit --amend --reset-author
   email-guess = !bash $DOTFILES/scripts/git/email-guess
   unwip = reset HEAD~
+  cleanup = !bash -c 'git gc --auto --aggressive && git remote prune origin'
 
 [commit]
-  gpgsign = true
+  gpgsign = false
 [gpg]
   program = gpg
