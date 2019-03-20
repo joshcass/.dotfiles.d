@@ -27,6 +27,7 @@ npm
 pcscd
 postgresql
 rbenv
+ripgrep
 scdaemon
 silversearcher-ag
 slack-desktop
