@@ -18,7 +18,7 @@ sh $dir/setup/ppas.sh
 
 fancy_echo "Installing packages via Apt"
 sudo apt-get update
-xargs -L 1 -a $dir/setup/apt-packages.txt sudo apt-get install -y
+xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
 
 fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
@@ -40,18 +40,8 @@ ls $dir/config | xargs -L 1 -I{} rm ~/.{}
 echo "Creating new symlinks"
 ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
 
-fancty_echo "Creating symlinks for termintaor"
-echo "Ensuring directories exist"
-mkdir -p ~/.config/gtk-3.0
-mkdir -p ~/.config/terminator
-
-echo "Removing existing links or files"
-rm ~/.config/terminator/config
-rm ~/.config/gtk-3.0/gtk.css
-
-echo "Creating new symlinks"
-ln -s $dir/terminator/gtk.css ~/.config/gtk-3.0/gtk.css
-ln -s $dir/terminator/config ~/.config/terminator/config
+fancy_echo "Setting up termintaor"
+sh $dir/setup/terminator.sh
 
 fancy_echo "Creating symlinks for git hooks"
 hooks_dir=$(dpkg -L git | grep -m 1 templates)/hooks

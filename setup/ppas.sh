@@ -25,7 +25,7 @@ install_keybase() {
 
 install_yarn() {
     if [ ! -x "$(command -v yarn)" ]; then
-        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+        wget -qO https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
         echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
         sudo apt update
         sudo apt install yarn -y
@@ -34,6 +34,18 @@ install_yarn() {
     fi
 }
 
+install_chrome() {
+    if [ ! -x "$(command -v google-chrome)" ]; then
+        wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt update
+        sudo apt intsall google-chrome-stable -y
+    else
+        echo "Google Chrome already installed"
+    fi
+}
+
 install_parity
 install_keybase
 install_yarn
+install_chrome
