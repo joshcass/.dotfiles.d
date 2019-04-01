@@ -144,7 +144,7 @@ function build_prompt {
     ps1="${ps1}${NEWLINE}"
 
     # prompt
-    ps1="${ps1}λ "
+    ps1="${ps1}🍺 "
 
     # set prompt output
     PS1="$ps1"
