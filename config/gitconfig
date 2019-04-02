@@ -54,6 +54,6 @@
   cleanup = !bash -c 'git gc --auto --aggressive && git remote prune origin'
 
 [commit]
-  gpgsign = false
+  gpgsign = true
 [gpg]
   program = gpg
