@@ -1,6 +1,7 @@
 [user]
   name = Josh Cass
   username = joshcass
+  signingkey = 809B5EE317ADDE65
 
 [color]
   ui = true
