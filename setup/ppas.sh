@@ -56,8 +56,20 @@ install_insync() {
     fi
 }
 
+install_brave() {
+    if [ ! -x "$(command -v brave-browser)" ]; then
+        curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key add -
+        echo deb https://brave-browser-apt-release.s3.brave.com "$(lsb_release -cs)" main | sudo tee /etc/apt/sources.list.d/brave.list
+        sudo apt-get update
+        sudo apt-get install brave-browser -y
+    else
+        echo "Brave browser already installed"
+    fi
+}
+
 install_parity
 install_keybase
 install_yarn
 install_chrome
 install_insync
+install_brave
