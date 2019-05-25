@@ -3,6 +3,7 @@ awscli
 certbot
 chromium-browser
 cifs-utils
+cmake
 ctags
 deluge
 direnv
@@ -15,10 +16,13 @@ imagemagick
 jpegoptim
 leiningen
 libcurl4-openssl-dev
+libevdev-dev
 libmagickwand-dev
 libpq-dev
 libreadline-dev
 libssl-dev
+libudev-dev
+libyaml-cpp-dev
 markdown
 network-manager-openvpn-gnome
 nfs-common
