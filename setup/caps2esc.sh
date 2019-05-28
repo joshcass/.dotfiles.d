@@ -1,3 +1,5 @@
+https://gitlab.com/interception/linux/plugins/caps2esc
+
 install_caps2esc() {
 echo "Cloning and compiling binaries"
 (
