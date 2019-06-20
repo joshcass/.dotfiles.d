@@ -4,6 +4,3 @@ autoload -Uz $DOTFILES/functions/*(:t)
 
 setopt autocd autopushd pushdignoredups
 
-eval "$(direnv hook zsh)"
-
-eval "$(rbenv init -)"

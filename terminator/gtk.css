@@ -17,6 +17,7 @@
 
 .terminator-terminal-window notebook paned separator {
   margin: 0px;
+  padding: 0px;
 }
 
 .terminator-terminal-window notebook tab {
