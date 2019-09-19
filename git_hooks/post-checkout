@@ -9,5 +9,12 @@
 # http://willi.am/blog/2015/02/27/dynamically-configure-your-git-email/
 
 if [[ $1 == 00000000000* ]]; then
-  git email-guess
+    git email-guess
+fi
+
+# hook that will automatically pull master and if there are new commits
+# will also automatically update dependencies
+
+if [[ "$PWD" =~ 'special_sauce' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
+    [[ ! $(git pull | tail -1) =~ 'up to date' ]] && bundle install && yarn install
 fi

@@ -1,6 +1,0 @@
-autoload -U compinit && compinit
-
-autoload -Uz $DOTFILES/functions/*(:t)
-
-setopt autocd autopushd pushdignoredups
-

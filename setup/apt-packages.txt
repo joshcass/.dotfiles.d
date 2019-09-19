@@ -44,3 +44,6 @@ xsel
 zlib1g-dev
 zsh
 zsh-syntax-highlighting
+
+
+ttf-unifont (AUR) to make spaceline not suck

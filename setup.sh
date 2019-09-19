@@ -47,7 +47,7 @@ fancy_echo "Creating quirks-handler for Magic Trackpad 2"
 sh $dir/setup/magic-trackpad-quirks.sh
 
 fancy_echo "Creating symlinks for git hooks"
-hooks_dir=$(dpkg -L git | grep -m 1 templates)/hooks
+hooks_dir=$(pacman -Qql git | grep -m 1 templates)hooks
 ls $dir/git_hooks | xargs -L 1 -I{} sudo ln -s $dir/git_hooks/{} $hooks_dir/{}
 
 fancy_echo "Configuring GPG and Yubikey"

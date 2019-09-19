@@ -11,3 +11,5 @@ Pry.config.exception_handler = proc do |output, exception, _pry_|
   output.puts exception
   output.puts exception.backtrace.first(10)
 end
+
+Pry.config.pager = false
