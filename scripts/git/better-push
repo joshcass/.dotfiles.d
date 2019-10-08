@@ -6,5 +6,5 @@ branchname=$(git rev-parse --abbrev-ref HEAD)
 if [[ -z $upstream ]]; then
     git push --set-upstream origin $branchname
 else
-    git push $2
+    git push "$@"
 fi
