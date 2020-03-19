@@ -14,7 +14,20 @@ fi
 
 # hook that will automatically pull master and if there are new commits
 # will also automatically update dependencies
+git_update() {
+    local current_rev=$(git rev-parse --short HEAD)
+
+    git pull
+
+    if git diff --name-only $current_rev..HEAD | grep -q Gemfile.lock; then
+        bundle install
+    fi
+
+    if git diff --name-only $current_rev..HEAD | grep -q yarn.lock; then
+        bundle exec yarn install
+    fi
+}
 
 if [[ "$PWD" =~ 'special_sauce' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
-    [[ ! $(git pull | tail -1) =~ 'up to date' ]] && bundle install && yarn install
+    git_update
 fi

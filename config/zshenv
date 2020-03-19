@@ -14,8 +14,6 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 source /opt/asdf-vm/asdf.sh
 
-source /opt/asdf-vm/completions/asdf.bash
-
 setopt autocd autopushd pushdignoredups
 
 eval "$(direnv hook zsh)"

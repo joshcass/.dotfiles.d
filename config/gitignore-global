@@ -50,3 +50,6 @@ TAGS
 
 # ignore asdf tool versions
 .tool-versions
+
+# ignore redisdata for docker
+redisdata/
