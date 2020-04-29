@@ -28,6 +28,6 @@ git_update() {
     fi
 }
 
-if [[ "$PWD" =~ 'special_sauce' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
+if [[ "$PWD" =~ 'special_sauce' ]] || [[ "$PWD" =~ 'listen' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
     git_update
 fi
