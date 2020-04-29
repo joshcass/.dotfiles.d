@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr__2D_:cd\x20\x2d
+SETUVAR _fish_abbr_rs:rspec
 SETUVAR fish_color_autosuggestion:93a1a1
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:586e75
@@ -30,6 +32,7 @@ SETUVAR fish_pager_color_completion:green
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/bonusly/\x2eparity\x2d3\x2e2\x2e0/bin/
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_color_command_duration:pure_color_warning
 SETUVAR pure_color_current_directory:pure_color_primary
@@ -51,7 +54,7 @@ SETUVAR pure_color_ssh_hostname:pure_color_mute
 SETUVAR pure_color_ssh_separator:pure_color_mute
 SETUVAR pure_color_ssh_user_normal:pure_color_mute
 SETUVAR pure_color_ssh_user_root:pure_color_light
-SETUVAR pure_color_success:magenta
+SETUVAR pure_color_success:green
 SETUVAR pure_color_virtualenv:pure_color_mute
 SETUVAR pure_color_warning:yellow
 SETUVAR pure_enable_git:true
