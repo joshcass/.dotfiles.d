@@ -36,13 +36,13 @@ SETUVAR pure_color_current_directory:pure_color_primary
 SETUVAR pure_color_danger:red
 SETUVAR pure_color_dark:black
 SETUVAR pure_color_git_branch:pure_color_mute
-SETUVAR pure_color_git_dirty:pure_color_mute
+SETUVAR pure_color_git_dirty:brred
 SETUVAR pure_color_git_unpulled_commits:pure_color_info
 SETUVAR pure_color_git_unpushed_commits:pure_color_info
 SETUVAR pure_color_info:cyan
 SETUVAR pure_color_jobs:pure_color_normal
 SETUVAR pure_color_light:white
-SETUVAR pure_color_mute:brblack
+SETUVAR pure_color_mute:brmagenta
 SETUVAR pure_color_normal:normal
 SETUVAR pure_color_primary:blue
 SETUVAR pure_color_prompt_on_error:pure_color_danger
