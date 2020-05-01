@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:/usr/bin/vim
+SETUVAR --export LS_COLORS:di\x3d1\x3b34\x3aln\x3d35\x3aso\x3d32\x3api\x3d33\x3aex\x3d1\x3b31\x3abd\x3d34\x3b46\x3acd\x3d34\x3b43\x3asu\x3d30\x3b41\x3asg\x3d30\x3b46\x3atw\x3d30\x3b42\x3aow\x3d30\x3b43
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__2D_:cd\x20\x2d
 SETUVAR _fish_abbr_rs:rspec
@@ -54,7 +56,7 @@ SETUVAR pure_color_ssh_hostname:pure_color_mute
 SETUVAR pure_color_ssh_separator:pure_color_mute
 SETUVAR pure_color_ssh_user_normal:pure_color_mute
 SETUVAR pure_color_ssh_user_root:pure_color_light
-SETUVAR pure_color_success:green
+SETUVAR pure_color_success:cyan
 SETUVAR pure_color_virtualenv:pure_color_mute
 SETUVAR pure_color_warning:yellow
 SETUVAR pure_enable_git:true
