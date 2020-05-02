@@ -1,9 +1,0 @@
-function mip() {
-  if [ "$(ip addr | grep 192.168)" ]; then
-    local grep_ip="$(ip addr | grep '192\.168')"
-  else
-    local grep_ip="$(ip addr | grep '10\.0')"
-  fi
-
-  echo $grep_ip | awk '{print $2}' | tee >(pbcopy)
-}

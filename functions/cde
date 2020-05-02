@@ -1,6 +1,0 @@
-# enter the directory that the the currently active Emacs file resides in
-cde() {
-  cd ${(Q)~$(emacsclient -e '(with-current-buffer
-                               (window-buffer (selected-window))
-                               default-directory) ')}
-}

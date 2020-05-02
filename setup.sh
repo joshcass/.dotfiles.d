@@ -34,11 +34,8 @@ fancy_echo "Setting Zsh as shell"
 sh $dir/setup/update-shell.sh
 
 fancy_echo "Creating symlinks for dotfiles"
-echo "Removing existing symlinks"
-ls $dir/config | xargs -L 1 -I{} rm ~/.{}
-
 echo "Creating new symlinks"
-ls $dir/config | xargs -L 1 -I{} ln -s $dir/config/{} ~/.{}
+command ls $dir/conf.d | xargs -L 1 -I{} ln -sf $dir/conf.d/{} ~/.{}
 
 fancy_echo "Setting up termintaor"
 sh $dir/setup/terminator.sh
@@ -48,7 +45,7 @@ sh $dir/setup/magic-trackpad-quirks.sh
 
 fancy_echo "Creating symlinks for git hooks"
 hooks_dir=$(pacman -Qql git | grep -m 1 templates)hooks
-ls $dir/git_hooks | xargs -L 1 -I{} sudo ln -s $dir/git_hooks/{} $hooks_dir/{}
+command ls $dir/git/hooks | xargs -L 1 -I{} sudo ln -sf $dir/git/hooks/{} $hooks_dir/{}
 
 fancy_echo "Configuring GPG and Yubikey"
 sh $dir/setup/gpg-and-yubikey.sh

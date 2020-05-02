@@ -50,13 +50,13 @@
   unstage = reset HEAD --
   last = log -1 HEAD
   cara = commit --amend --reset-author
-  email-guess = !bash $DOTFILES/scripts/git/email-guess
+  email-guess = !bash $DOTFILES/git/scripts/email-guess
   unwip = reset HEAD~
   cleanup = !bash -c 'git gc --auto --aggressive && git remote prune origin'
   hide = update-index --skip-worktree
   unhide = update-index --no-skip-worktree
   hidden = "!git ls-files -v | grep ^[hsS] | cut -c 3-"
-  better-push = !bash $DOTFILES/scripts/git/better-push
+  better-push = !bash $DOTFILES/git/scripts/better-push
 
 [commit]
   gpgsign = false
