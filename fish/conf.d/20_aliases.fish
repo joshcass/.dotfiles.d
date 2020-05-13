@@ -3,8 +3,8 @@ alias pbcopy='xsel --clipboard --input'
 alias m="emacsclient -c -n"
 alias mm="emacsclient -c -n ."
 alias say="spd-say"
-alias grep="grep --color=auto"
-# alias -g G="| grep -i"
+alias G="grep --color=auto -i"
+alias aset="asdf"
 
 # fancy ls commands
 # -l  long format
