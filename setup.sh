@@ -13,24 +13,25 @@ dir=~/.dotfiles.d
 
 sudo true
 
-fancy_echo "Adding and installing packages from custom PPA's"
-sh $dir/setup/ppas.sh
+fancy_echo "Installing packages"
+sudo pacman -S --needed --noconfirm - < $dir/setup/manjaro-packages.txt
 
-fancy_echo "Installing packages via Apt"
-sudo apt-get update
-xargs -a $dir/setup/apt-packages.txt sudo apt-get install -y
+fancy_echo "Installing AUR packages"
+xargs -a $dir/setup/aur.txt pamac build --no-confirm
+
+fancy_echo "Enabling snapd"
+sudo systemctl enable --now snapd.socket
 
 fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
-xargs -L 1 -a $dir/setup/classic-snaps.txt sudo snap install --classic
 
-fancy_echo "Installing global NPM packages"
-xargs -a $dir/setup/npm-packages.txt sudo npm install -g
+fancy_echo "Installing Flatpaks"
+xargs -a $dir/setup/flatpak.txt sudo flatpak install -y
 
-fancy_echo "Cloning packages installed via Git"
-sh $dir/setup/git-clones.sh
+fancy_echo "Setting up Spacemacs"
+sh $dir/setup/spacemacs.sh
 
-fancy_echo "Setting Zsh as shell"
+fancy_echo "Setting Fish as shell"
 sh $dir/setup/update-shell.sh
 
 fancy_echo "Creating symlinks for dotfiles"
@@ -50,10 +51,7 @@ command ls $dir/git/hooks | xargs -L 1 -I{} sudo ln -sf $dir/git/hooks/{} $hooks
 fancy_echo "Configuring GPG and Yubikey"
 sh $dir/setup/gpg-and-yubikey.sh
 
-fancy_echo "Installing heroku plugins"
-xargs -a $dir/setup/heroku-plugins.txt heroku plugins:install
-
-fancy_echo "Ensuring secrets file"
-touch $dir/secrets
+fancy_echo "Setting up caps2esc"
+sh $dir/setup/caps2esc.sh
 
 fancy_echo "Done"

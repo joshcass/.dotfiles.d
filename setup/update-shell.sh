@@ -1,8 +1,8 @@
 update_shell() {
     local shell_path;
-    shell_path="$(which zsh)"
+    shell_path="$(which fish)"
 
-    echo "Changing shell to zsh"
+    echo "Changing shell to fish"
     if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
         echo "Adding '$shell_path' to /etc/shells"
         sudo sh -c "echo $shell_path >> /etc/shells"
@@ -12,10 +12,10 @@ update_shell() {
 
 case "$SHELL" in
     */zsh)
-        if [ "$(which zsh)" != '/usr/bin/zsh' ] ; then
+        if [ "$(which fish)" != '/usr/bin/fish' ] ; then
             update_shell
         else
-            echo "Zsh is already configured"
+            echo "Fish is already configured"
         fi
         ;;
     *)
