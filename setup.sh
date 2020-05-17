@@ -9,7 +9,7 @@ fancy_echo() {
     printf "\n${cyan}~~> ${yellow}$fmt${normal}\n" "$@"
 }
 
-dir=~/.dotfiles.d
+dir=$HOME/.dotfiles.d
 
 sudo true
 
@@ -36,7 +36,7 @@ sh $dir/setup/update-shell.sh
 
 fancy_echo "Creating symlinks for dotfiles"
 echo "Creating new symlinks"
-command ls $dir/conf.d | xargs -L 1 -I{} ln -sf $dir/conf.d/{} ~/.{}
+command ls $dir/conf.d | xargs -L 1 -I{} ln -sf $dir/conf.d/{} $HOME/.{}
 
 fancy_echo "Setting up termintaor"
 sh $dir/setup/terminator.sh
