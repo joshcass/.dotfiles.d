@@ -21,15 +21,17 @@ xargs -a $dir/setup/aur.txt pamac build --no-confirm
 
 fancy_echo "Enabling snapd"
 sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
 
 fancy_echo "Installing Snaps"
 xargs -a $dir/setup/snaps.txt sudo snap install
+xargs -a $dir/setup/classic_snaps.txt sudo snap install --classic
 
 fancy_echo "Installing Flatpaks"
 xargs -a $dir/setup/flatpak.txt sudo flatpak install -y
 
-fancy_echo "Setting up Spacemacs"
-sh $dir/setup/spacemacs.sh
+fancy_echo "Setting up Doom"
+sh $dir/setup/doom.sh
 
 fancy_echo "Setting Fish as shell"
 sh $dir/setup/update-shell.sh
