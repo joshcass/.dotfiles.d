@@ -1,12 +1,14 @@
 automake
 ccid
 chromium
+clang
 cmake
 ctags
 diff-so-fancy
 discount
 docker-compose
 emacs
+fd
 fish
 make
 nfs-utils
