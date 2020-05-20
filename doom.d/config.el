@@ -34,6 +34,15 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Start in fullscreen
+(add-to-list 'initial-frame-alist '(fullscreen . fullscreen))
+
+(use-package! theme-changer
+  :config
+  (setq calendar-location-name "Evergreen, CO")
+  (setq calendar-latitude 39.636110)
+  (setq calendar-longitude -105.326590)
+  (change-theme 'doom-solarized-light 'doom-solarized-dark))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

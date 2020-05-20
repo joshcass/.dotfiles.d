@@ -10,10 +10,12 @@ docker-compose
 emacs
 fd
 fish
+libvterm
 make
 nfs-utils
 pkgfile
 ripgrep
+shellcheck
 snapd
 vim
 xsel

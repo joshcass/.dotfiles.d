@@ -1,7 +1,5 @@
 # Shell aliases
 alias pbcopy='xsel --clipboard --input'
-alias m="emacsclient -c -n"
-alias mm="emacsclient -c -n ."
 alias say="spd-say"
 alias G="grep --color=auto -i"
 alias aset="asdf"
