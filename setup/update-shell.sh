@@ -1,6 +1,7 @@
+#!/bin/bash
+ 
 update_shell() {
-    local shell_path;
-    shell_path="$(which fish)"
+    local shell_path="$(which fish)"
 
     echo "Changing shell to fish"
     if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
@@ -11,7 +12,7 @@ update_shell() {
 }
 
 case "$SHELL" in
-    */zsh)
+    */fish)
         if [ "$(which fish)" != '/usr/bin/fish' ] ; then
             update_shell
         else

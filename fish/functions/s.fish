@@ -5,8 +5,10 @@ function s
     iex -S mix phoenix.server
   else if test -e ionic.config.json
     ionic serve
+  else if test -e Procfile.dev*
+    rails start $argv
   else if test -e Gemfile
-      rails start $argv
+    rails s $argv
   else if test -e project.clj
     lein run
   else if test -e yarn.lock

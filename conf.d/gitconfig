@@ -33,7 +33,7 @@
 [core]
   autocrlf = input
   safecrlf = true
-  editor = /usr/bin/vim
+  editor = /usr/bin/emacs
   excludesfile = ~/.gitignore-global
 
 [pager]
