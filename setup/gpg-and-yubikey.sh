@@ -38,6 +38,18 @@ update_gpg_agent() {
     fi
 }
 
+add_pam_env() {
+    if [ ! -f $HOME/.pam_environment ]; then
+        echo "Creating ~/.pam_environment"
+        echo | tee $HOME/.pam_environment <<END_TEXT
+SSH_AGENT_PID	DEFAULT=
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+END_TEXT
+    else
+        echo ".pam_environmnt already created"
+    fi
+}
+
 echo "Adding/updating GPG key from keybase.io"
 curl https://keybase.io/joshcass/key.asc | gpg --import
 
@@ -46,3 +58,4 @@ gpg --card-status
 
 disable_gnome_keyring_autostart
 update_gpg_agent
+add_pam_env
