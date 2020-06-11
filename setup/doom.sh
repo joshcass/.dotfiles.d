@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clone_doom() {
     if [ ! -d $HOME/.emacs.d ]; then
         echo "Cloning Doom repo into ~/.emacs.d"

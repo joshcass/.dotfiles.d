@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Ensuring directories exist"
 mkdir -p $HOME/.config/gtk-3.0
 mkdir -p $HOME/.config/terminator

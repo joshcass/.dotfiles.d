@@ -1,3 +1,4 @@
+#!/bin/bash
 https://gitlab.com/interception/linux/plugins/caps2esc
 
 echo "Writing udevmon job configuration"

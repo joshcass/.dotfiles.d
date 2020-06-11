@@ -1,3 +1,4 @@
+#!/bin/bash
 # Relevant info comes from here
 # https://blog.josefsson.org/2017/06/19/openpgp-smartcard-under-gnome-on-debian-9-0-stretch/
 
