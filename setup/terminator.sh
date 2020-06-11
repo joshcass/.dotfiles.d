@@ -7,5 +7,5 @@ rm $HOME/.config/terminator/config
 rm $HOME/.config/gtk-3.0/gtk.css
 
 echo "Creating new symlinks"
-ln -s $dir/terminator/gtk.css $HOME/.config/gtk-3.0/gtk.css
-ln -s $dir/terminator/config $HOME/.config/terminator/config
+ln -s $SETUP_DIR/terminator/gtk.css $HOME/.config/gtk-3.0/gtk.css
+ln -s $SETUP_DIR/terminator/config $HOME/.config/terminator/config

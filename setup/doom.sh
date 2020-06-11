@@ -11,7 +11,7 @@ clone_doom() {
 symlink_doom_config() {
     if [ ! -d $HOME/.doom.d ]; then
         echo "Symlinking .doom.d into ~/.doom.d"
-        ln -s $dir/doom.d $HOME/.doom.d
+        ln -s $SETUP_DIR/doom.d $HOME/.doom.d
     else
         echo "Doom config already installed"
     fi

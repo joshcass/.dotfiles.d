@@ -17,6 +17,7 @@ pkgfile
 ripgrep
 shellcheck
 snapd
+terminator
 vim
 xsel
 yubikey-full-disk-encryption

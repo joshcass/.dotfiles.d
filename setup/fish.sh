@@ -11,6 +11,15 @@ update_shell() {
     sudo chsh -s "$shell_path" "$USER"
 }
 
+symlink_doom_config() {
+    if [ ! -d $HOME/.config/fish ]; then
+        echo "Symlinking ~/.config/fish"
+        ln -s $SETUP_DIR/fish $HOME/.config/fish
+    else
+        echo "Fish config already installed"
+    fi
+}
+
 case "$SHELL" in
     */fish)
         if [ "$(which fish)" != '/usr/bin/fish' ] ; then
