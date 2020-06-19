@@ -34,8 +34,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-;; Start in fullscreen
-(add-to-list 'initial-frame-alist '(fullscreen . fullscreen))
+;; Start maximized
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (use-package! theme-changer
   :config
