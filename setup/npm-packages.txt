@@ -1,4 +1,0 @@
-eslint
-tern
-js-beautify
-stylelint

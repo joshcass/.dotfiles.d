@@ -20,5 +20,6 @@ snapd
 terminator
 ttf-hack
 vim
+xcape
 xsel
 yubikey-full-disk-encryption

@@ -14,21 +14,10 @@ export SETUP_DIR=$HOME/.dotfiles.d
 sudo true
 
 fancy_echo "Installing packages"
-sudo pacman -S --needed --noconfirm - < $SETUP_DIR/setup/manjaro-packages.txt
+sudo pacman -S --needed --noconfirm - < $SETUP_DIR/setup/packages.txt
 
 fancy_echo "Installing AUR packages"
 xargs -a $SETUP_DIR/setup/aur.txt pamac build --no-confirm
-
-fancy_echo "Enabling snapd"
-sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
-
-fancy_echo "Installing Snaps"
-xargs -a $SETUP_DIR/setup/snaps.txt sudo snap install
-xargs -a $SETUP_DIR/setup/classic_snaps.txt sudo snap install --classic
-
-fancy_echo "Installing Flatpaks"
-xargs -a $SETUP_DIR/setup/flatpak.txt sudo flatpak install -y
 
 fancy_echo "Setting up Doom"
 sh $SETUP_DIR/setup/doom.sh
@@ -46,6 +35,9 @@ sh $SETUP_DIR/setup/terminator.sh
 fancy_echo "Creating quirks-handler for Magic Trackpad 2"
 sh $SETUP_DIR/setup/magic-trackpad-quirks.sh
 
+fancy_echo "Enabling natural scroll"
+sudo sed -i '/EndSection/ i \    Option "NaturalScrolling" "true"' /etc/X11/xorg.conf.d/30-touchpad.conf
+
 fancy_echo "Creating symlinks for git hooks"
 hooks_dir=$(pacman -Qql git | grep -m 1 templates)hooks
 ls $SETUP_DIR/git/hooks | xargs -L 1 -I{} sudo ln -sf $SETUP_DIR/git/hooks/{} $hooks_dir/{}
@@ -53,7 +45,11 @@ ls $SETUP_DIR/git/hooks | xargs -L 1 -I{} sudo ln -sf $SETUP_DIR/git/hooks/{} $h
 fancy_echo "Configuring GPG and Yubikey"
 sh $SETUP_DIR/setup/gpg-and-yubikey.sh
 
-fancy_echo "Setting up caps2esc"
-sh $SETUP_DIR/setup/caps2esc.sh
+fancy_echo "Setting up keyboard"
+localectl us,us pc105, norman, ctrl:nocaps,grp:win_space_toggle
+
+fancy_echo "Installing suspend unit"
+sudo cp $SETUP_DIR/setup/suspend_unit.txt /etc/systemd/system/suspend@.service
+sudo systemctl enable suspend@$USER
 
 fancy_echo "Done"
