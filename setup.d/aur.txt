@@ -1,6 +1,5 @@
 asdf-vm
 direnv
-ferdi
 insync
 ttf-unifont
 vivaldi
