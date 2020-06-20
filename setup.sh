@@ -49,7 +49,7 @@ fancy_echo "Configuring GPG and Yubikey"
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
 fancy_echo "Setting up keyboard"
-localectl us,us pc105, norman, ctrl:nocaps,grp:win_space_toggle
+localectl set-x11-keymap us,us pc105 norman, ctrl:nocaps,grp:win_space_toggle
 
 fancy_echo "Installing suspend unit"
 sudo cp $SETUP_DIR/conf.d/systemd/suspend_unit.txt /etc/systemd/system/suspend@.service
