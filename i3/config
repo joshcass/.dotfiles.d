@@ -284,7 +284,6 @@ exec --no-startup-id clipit
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id xcape; xcape -e 'Caps_Lock=Escape'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

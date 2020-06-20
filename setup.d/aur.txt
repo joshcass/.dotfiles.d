@@ -1,5 +1,6 @@
 asdf-vm
 direnv
 insync
+interception-caps2esc
 ttf-unifont
 vivaldi
