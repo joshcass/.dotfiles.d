@@ -1,8 +1,8 @@
 #!/bin/bash
 # don't commit to master!
 
-if [[ $PWD =~ 'special_sauce' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
-    echo "Don't commit to master dummy"
-    echo "If you really must commit to master then run this command again with -n to skip the hook"
-    exit 1
+if [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
+	echo "Don't commit to master dummy"
+	echo "If you really must commit to master then run this command again with -n to skip the hook"
+	exit 1
 fi

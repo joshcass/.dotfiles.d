@@ -25,4 +25,5 @@ case "$SHELL" in
 esac
 
 echo "Symlinking ~/.config/fish"
+rm -rf $HOME/.confit/fish
 ln -sf $SETUP_DIR/fish $HOME/.config/fish

@@ -1,7 +1,7 @@
 # Shell aliases
 alias pbcopy='xsel --clipboard --input'
 alias say="spd-say"
-alias G="grep --color=auto -i"
+alias G="rg -i"
 alias aset="asdf"
 
 # fancy ls commands

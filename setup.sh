@@ -19,6 +19,9 @@ sudo pacman -S --needed --noconfirm - < $SETUP_DIR/setup.d/packages.txt
 fancy_echo "Installing AUR packages"
 xargs -a $SETUP_DIR/setup.d/aur.txt pamac build --no-confirm
 
+fancy_echo "Updating pkgfile"
+sudo pkgfile -u
+
 fancy_echo "Setting up Doom"
 sh $SETUP_DIR/setup.d/doom.sh
 
@@ -49,7 +52,7 @@ fancy_echo "Configuring GPG and Yubikey"
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
 fancy_echo "Setting up keyboard"
-localectl set-x11-keymap us,us pc105 norman, grp:win_space_toggle
+localectl set-x11-keymap us,us pc105 ,norman grp:win_space_toggle
 
 fancy_echo "Installing suspend unit"
 sudo cp $SETUP_DIR/conf.d/systemd/suspend_unit.txt /etc/systemd/system/suspend@.service
@@ -59,6 +62,7 @@ fancy_echo "Enabling redshift"
 systemctl --user enable redshift
 
 fancy_echo "Symlinking i3 config"
+rm -rf $HOME/.i3
 ln -sf $SETUP_DIR/i3 $HOME/.i3
 
 fancy_echo "Done."

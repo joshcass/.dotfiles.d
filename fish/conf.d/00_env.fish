@@ -2,9 +2,9 @@ set -gx DOTFILES $HOME/.dotfiles.d
 
 set -gx EDITOR /usr/bin/emacs
 
-set -gx PATH $HOME/.emacs.d/bin:$HOME/.parity-3.2.0/bin $PATH
+set -gx PATH $HOME/.emacs.d/bin:$HOME/.parity/bin $PATH
 
-source /usr/share/doc/pkgfile/command-not-found.fish
+set -gx BROWSER /usr/bin/vivaldi-stable
 
 source /opt/asdf-vm/asdf.fish
 
