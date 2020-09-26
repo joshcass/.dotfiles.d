@@ -1,0 +1,6 @@
+[submodule "fish/functions/pure"]
+	path = fish/functions/pure
+	url = git@github.com:rafaelrinaldi/pure.git
+[submodule "fish/functions/z"]
+	path = fish/functions/z
+	url = git@github.com:jethrokuan/z.git
