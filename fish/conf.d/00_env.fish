@@ -4,7 +4,7 @@ set -gx EDITOR /usr/bin/emacs
 
 set -gx PATH $HOME/.emacs.d/bin:$HOME/.parity/bin $PATH
 
-set -gx BROWSER /usr/bin/vivaldi-stable
+set -gx BROWSER /usr/bin/vivaldi-snapshot
 
 set -gx Z_DATA $HOME/.local/share/zdata
 

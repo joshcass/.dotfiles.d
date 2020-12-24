@@ -4,7 +4,7 @@ abbr -ag gb git branch
 abbr -ag gs git status
 abbr -ag gd git diff
 abbr -ag ga git add
-abbr -ag gh git hist
+abbr -ag ghs git hist
 abbr -ag gf git fetch
 abbr -ag gm git merge
 abbr -ag gka git commit -a

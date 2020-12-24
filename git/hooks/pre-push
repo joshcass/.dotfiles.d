@@ -4,6 +4,6 @@ upstream=$(git for-each-ref --format='%(upstream:short)' "$(git symbolic-ref -q 
 branchname=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ $upstream =~ 'master' ]] && [[ $branchname != 'master' ]]; then
-    echo "Non master branch is tracking master!!!"
-    exit 1
+	echo "Non master branch is tracking master!!!"
+	exit 1
 fi

@@ -9,25 +9,25 @@
 # http://willi.am/blog/2015/02/27/dynamically-configure-your-git-email/
 
 if [[ $1 == 00000000000* ]]; then
-    git email-guess
+	git email-guess
 fi
 
 # hook that will automatically pull master and if there are new commits
 # will also automatically update dependencies
 git_update() {
-    local current_rev=$(git rev-parse --short HEAD)
+	local current_rev=$(git rev-parse --short HEAD)
 
-    git pull --no-rebase
+	git pull --no-rebase
 
-    if git diff --name-only $current_rev..HEAD | grep -q Gemfile.lock; then
-        bundle install
-    fi
+	if git diff --name-only $current_rev..HEAD | grep -q Gemfile.lock; then
+		bundle install
+	fi
 
-    if git diff --name-only $current_rev..HEAD | grep -q yarn.lock; then
-        bundle exec yarn install
-    fi
+	if git diff --name-only $current_rev..HEAD | grep -q yarn.lock; then
+		bundle exec yarn install
+	fi
 }
 
-if [[ "$PWD" =~ 'special_sauce' ]] || [[ "$PWD" =~ 'listen' ]] && [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
-    git_update
+if [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]] || [[ $(git rev-parse --abbrev-ref HEAD) == 'main' ]]; then
+	git_update
 fi

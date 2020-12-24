@@ -1,8 +1,8 @@
 #!/bin/bash
 # don't commit to master!
 
-if [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]]; then
-	echo "Don't commit to master dummy"
-	echo "If you really must commit to master then run this command again with -n to skip the hook"
+if [[ $(git rev-parse --abbrev-ref HEAD) == 'master' ]] || [[ $(git rev-parse --abbrev-ref HEAD) == 'main' ]]; then
+	echo "Don't commit to main dummy"
+	echo "If you really must commit to main then run this command again with -n to skip the hook"
 	exit 1
 fi

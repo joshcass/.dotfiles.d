@@ -49,3 +49,4 @@
 (package! theme-changer
   :recipe (:host github :repo "hadronzoo/theme-changer"))
 
+(package! feature-mode)
