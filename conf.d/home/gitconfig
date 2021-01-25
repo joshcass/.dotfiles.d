@@ -62,7 +62,7 @@
   better-push = !bash $DOTFILES/git/scripts/better-push
 
 [commit]
-  gpgsign = false
+  gpgsign = true
 [gpg]
   program = gpg
 [init]

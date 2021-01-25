@@ -6,3 +6,6 @@ source $HOME/.config/fish/functions/pure/conf.d/pure.fish
 # Z #
 set fish_function_path $HOME/.config/fish/functions/z/functions/ $fish_function_path
 source $HOME/.config/fish/functions/z/conf.d/z.fish
+
+# Use vi mode #
+fish_vi_key_bindings

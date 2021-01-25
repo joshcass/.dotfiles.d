@@ -25,5 +25,5 @@ terminator
 tidy
 ttf-hack
 vim
+vivaldi
 xsel
-yubikey-full-disk-encryption
