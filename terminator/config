@@ -20,90 +20,60 @@
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#002b36"
+    background_color = "#fdf6e3"
     background_darkness = 0.87
     cursor_shape = underline
     cursor_color = "#aaaaaa"
     font = Hack 11
-    foreground_color = "#839496"
+    foreground_color = "#657b83"
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_lines = 1000
     scrollback_infinite = True
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     login_shell = True
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child0]]]
-      fullscreen = True
-      last_active_window = True
-      maximised = False
-      order = 0
-      parent = ""
-      position = 0:0
-      size = 3440, 1440
-      title = /usr/bin/zsh
       type = Window
+      parent = ""
+      order = 0
+      position = 12:12
+      maximised = False
+      fullscreen = False
+      size = 1701, 1392
+      title = /usr/bin/zsh
+      last_active_term = 21e49037-721b-4a6d-90c2-0fbf23cb253e
+      last_active_window = True
     [[[child1]]]
-      active_page = 0
-      labels = None, None, None
-      last_active_term = b9546a12-79f0-4fd9-8242-afd5f619aed8, 77ed0073-175f-449e-a4f8-44611d26f280, 0550a7ed-02df-4527-808d-7e23fe12e26f
-      order = 0
+      type = HPaned
       parent = child0
-      type = Notebook
+      order = 0
+      position = 1136
+      ratio = 0.6698113207547169
     [[[child2]]]
-      order = 0
+      type = HPaned
       parent = child1
-      position = 710
-      ratio = 0.509325681492
-      type = VPaned
-    [[[child3]]]
       order = 0
+      position = 559
+      ratio = 0.4942528735632184
+    [[[terminal3]]]
+      type = Terminal
       parent = child2
-      position = 1720
-      ratio = 0.500727802038
-      type = HPaned
-    [[[child8]]]
-      order = 2
-      parent = child1
-      position = 1719
-      ratio = 0.500436681223
-      type = HPaned
-    [[[terminal10]]]
-      order = 1
-      parent = child8
-      profile = default
-      type = Terminal
-      uuid = cfcc59a3-2d7a-402b-8ec3-88fe60b25b4f
-    [[[terminal4]]]
       order = 0
-      parent = child3
       profile = default
-      type = Terminal
-      uuid = dca555c6-7924-4f5c-80ce-24258680f336
-    [[[terminal5]]]
-      order = 1
-      parent = child3
-      profile = default
-      type = Terminal
       uuid = 5dbebd3e-521c-4eca-a925-713de97c6ab2
-    [[[terminal6]]]
-      order = 1
+    [[[terminal4]]]
+      type = Terminal
       parent = child2
-      profile = default
-      type = Terminal
-      uuid = b9546a12-79f0-4fd9-8242-afd5f619aed8
-    [[[terminal7]]]
       order = 1
+      profile = default
+      uuid = 21e49037-721b-4a6d-90c2-0fbf23cb253e
+    [[[terminal5]]]
+      type = Terminal
       parent = child1
+      order = 1
       profile = default
-      type = Terminal
-      uuid = 77ed0073-175f-449e-a4f8-44611d26f280
-    [[[terminal9]]]
-      directory = ""
-      order = 0
-      parent = child8
-      profile = default
-      type = Terminal
-      uuid = 0550a7ed-02df-4527-808d-7e23fe12e26f
+      uuid = e0851aa2-42cc-49ee-be8b-6754a6fd7bc6
 [plugins]
