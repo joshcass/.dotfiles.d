@@ -13,6 +13,7 @@ abbr -ag gp git better-push
 abbr -ag gl git log
 abbr -ag gu git unwip
 abbr -ag gr git reflog
+abbr -ag gt git tag -a
 
 # Shell
 abbr -ag -- - 'cd -'
@@ -25,10 +26,10 @@ abbr -ag ems systemctl status --user emacs
 abbr -ag dotfiles cd $DOTFILES
 
 # Ruby/Rails
-abbr -ag rs rspec
-abbr -ag c rails c
-abbr -ag ss spring stop
-abbr -ag mg 'rails db:migrate db:rollback && rake db:migrate db:test:prepare'
 abbr -ag be bundle exec
 abbr -ag bn bundle
-abbr -ag cu cucumber
+
+# Terraform
+abbr -ag tfp terraform plan
+abbr -ag tfi terraform init
+abbr -ag tfv terraform validate

@@ -6,7 +6,7 @@
   padding: 0px;
 }
 
-.terminator-terminal-window notebook header  {
+.terminator-terminal-window notebook header {
   background-color: #222;
   border-color: #222;
 }
@@ -21,7 +21,6 @@
 }
 
 .terminator-terminal-window notebook tab {
-  color: transparent;
   background-color: #222;
   padding: 0.5em;
 }
@@ -29,8 +28,4 @@
 .terminator-terminal-window notebook tab button {
   background-color: #222;
   color: gray;
-}
-
-.terminator-terminal-window notebook box {
-  color: transparent;
 }

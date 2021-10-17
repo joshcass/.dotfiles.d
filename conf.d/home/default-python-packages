@@ -1,0 +1,4 @@
+nose
+pipenv
+pytest
+python-language-server

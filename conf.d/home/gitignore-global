@@ -41,6 +41,7 @@ Thumbs.db
 # env files
 .envrc
 .env
+.rufo
 
 # emacs autosave file
 .#*.*

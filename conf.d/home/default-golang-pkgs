@@ -6,3 +6,4 @@ golang.org/x/tools/cmd/gorename
 golang.org/x/tools/cmd/guru
 github.com/cweill/gotests/...
 github.com/fatih/gomodifytags
+golang.org/x/tools/gopls@latest

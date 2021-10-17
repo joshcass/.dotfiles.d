@@ -144,8 +144,8 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:comms
-set $ws2 2:browser
+set $ws1 1:personal
+set $ws2 2:work
 set $ws3 3:doom
 set $ws4 4:terminator
 set $ws5 5:dev-browser
@@ -184,8 +184,8 @@ bindsym $mod+Shift+F7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+F8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-assign [class="Ferdi"] $ws1
 assign [class="Vivaldi-stable"] $ws2
+assign [class="Slack"] $ws2
 assign [class="Emacs"] $ws3
 assign [class="Terminator"] $ws4
 assign [class="Chromium"] $ws5

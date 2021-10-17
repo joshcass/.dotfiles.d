@@ -1,8 +1,8 @@
-# Shell aliases
 alias pbcopy='xsel --clipboard --input'
 alias say="spd-say"
 alias G="rg -i"
 alias aset="asdf"
+alias tf="terraform"
 
 # fancy ls commands
 # -l  long format

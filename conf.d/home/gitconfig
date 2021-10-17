@@ -33,7 +33,7 @@
 [core]
   autocrlf = input
   safecrlf = true
-  editor = /usr/bin/emacs
+  editor = /usr/bin/vim
   excludesfile = ~/.gitignore-global
 
 [pager]
@@ -60,10 +60,16 @@
   unhide = update-index --no-skip-worktree
   hidden = "!git ls-files -v | grep ^[hsS] | cut -c 3-"
   better-push = !bash $DOTFILES/git/scripts/better-push
+  clear = reset --hard
+
+[tag]
+forceSignAnnotated = true
 
 [commit]
   gpgsign = true
+
 [gpg]
   program = gpg
+
 [init]
   defaultBranch = main

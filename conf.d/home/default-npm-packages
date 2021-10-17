@@ -1,4 +1,7 @@
+bash-language-server
 dockerfile-language-server-nodejs
 javascript-typescript-langserver
 js-beautify
+vscode-json-languageserver
 yarn
+yaml-language-server

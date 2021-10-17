@@ -12,6 +12,8 @@ set -gx Z_DATA_DIR $HOME/.local/share/z
 
 set -gx Z_EXCLUDE \x5e$HOME\x24
 
+set -gx VAULT_ADDR https://vault.bonus.ly
+
 source /opt/asdf-vm/asdf.fish
 
 direnv hook fish | source

@@ -1,4 +1,4 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
@@ -20,6 +20,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "hack" :size 16))
+(setq doom-big-font (font-spec :family "hack" :size 40))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -34,6 +35,12 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; keep the cursor a bit more centered
+(setq scroll-preserve-screen-position t
+      scroll-conservatively 0
+      maximum-scroll-margin 0.5
+      scroll-margin 99999)
+
 ;; Start maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
@@ -43,6 +50,15 @@
   (setq calendar-latitude 39.636110)
   (setq calendar-longitude -105.326590)
   (change-theme 'doom-solarized-light 'doom-solarized-dark))
+
+(after! lsp-mode
+  (lsp-register-custom-settings
+   '(("gopls.experimentalWorkspaceModule" t t)))
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/bin/terraform-ls" "serve"))
+                    :major-modes '(terraform-mode)
+                    :server-id 'terraform-ls)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
