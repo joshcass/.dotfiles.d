@@ -1,10 +1,10 @@
 #!/bin/bash
- 
+
 update_shell() {
     local shell_path="$(which fish)"
 
     echo "Changing shell to fish"
-    if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
+    if ! grep "$shell_path" /etc/shells >/dev/null 2>&1; then
         echo "Adding '$shell_path' to /etc/shells"
         sudo sh -c "echo $shell_path >> /etc/shells"
     fi
@@ -13,7 +13,7 @@ update_shell() {
 
 case "$SHELL" in
     */fish)
-        if [ "$(which fish)" != '/usr/bin/fish' ] ; then
+        if [ "$(which fish)" != '/usr/bin/fish' ]; then
             update_shell
         else
             echo "Fish is already configured"
@@ -25,5 +25,5 @@ case "$SHELL" in
 esac
 
 echo "Symlinking ~/.config/fish"
-rm -rf $HOME/.confit/fish
+rm -rf $HOME/.config/fish
 ln -sf $SETUP_DIR/fish $HOME/.config/fish

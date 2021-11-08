@@ -1,4 +1,4 @@
 nose
 pipenv
 pytest
-python-language-server
+python-lsp-server
