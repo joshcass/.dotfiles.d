@@ -46,9 +46,9 @@
 
 (use-package! theme-changer
   :config
-  (setq calendar-location-name "Evergreen, CO")
-  (setq calendar-latitude 39.636110)
-  (setq calendar-longitude -105.326590)
+  (setq calendar-location-name "Olympia, WA")
+  (setq calendar-latitude 46.977018)
+  (setq calendar-longitude -122.858419)
   (change-theme 'doom-solarized-light 'doom-solarized-dark))
 
 (after! lsp-mode

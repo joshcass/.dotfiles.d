@@ -22,8 +22,8 @@ order += "disk /home"
 # order += "battery all"
 # order += "load"
 order += "memory"
-order += "wireless _first_"
-# order += "ethernet _first_"
+# order += "wireless _first_"
+order += "ethernet _first_"
 order += "tztime local"
 
 cpu_usage {
@@ -83,5 +83,5 @@ tztime local {
 
 cpu_temperature Tdie {
         format = "T: %degrees °C"
-        path = "/sys/class/hwmon/hwmon1/temp2_input"
+        path = "/sys/class/hwmon/hwmon1/temp1_input"
 }

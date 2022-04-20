@@ -33,3 +33,7 @@ abbr -ag bn bundle
 abbr -ag tfp terraform plan
 abbr -ag tfi terraform init
 abbr -ag tfv terraform validate
+
+# K8S
+abbr -ag ktl kubectl
+abbr -ag itl istioctl

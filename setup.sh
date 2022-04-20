@@ -42,10 +42,6 @@ sh $SETUP_DIR/setup.d/terminator.sh
 fancy_echo "Enabling natural scroll"
 sudo sed -i '/EndSection/ i \    Option "NaturalScrolling" "true"' /etc/X11/xorg.conf.d/30-touchpad.conf
 
-fancy_echo "Creating symlinks for git hooks"
-hooks_dir=$(pacman -Qql git | grep -m 1 templates)hooks
-ls $SETUP_DIR/git/hooks | xargs -L 1 -I{} sudo ln -sf $SETUP_DIR/git/hooks/{} $hooks_dir/{}
-
 fancy_echo "Configuring GPG and Yubikey"
 # need to enable pcscd.socket too
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh

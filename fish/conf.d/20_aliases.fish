@@ -4,6 +4,8 @@ alias G="rg -i"
 alias aset="asdf"
 alias tf="terraform"
 
+alias direnv="asdf exec direnv"
+
 # fancy ls commands
 # -l  long format
 # -F  / after dirs, * after exe, @ after symlink

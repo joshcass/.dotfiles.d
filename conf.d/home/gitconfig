@@ -73,3 +73,7 @@ forceSignAnnotated = true
 
 [init]
   defaultBranch = main
+  templateDir = $DOTFILES/git/hooks
+
+[gitlab]
+	user = joshcass

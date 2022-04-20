@@ -2,8 +2,6 @@ set -gx DOTFILES $HOME/.dotfiles.d
 
 set -gx EDITOR /usr/bin/emacs
 
-set -gx PATH $HOME/.emacs.d/bin:$HOME/.local/bin/parity/bin:$HOME/.local/bin/unused $PATH
-
 set -gx BROWSER /usr/bin/vivaldi-stable
 
 set -gx Z_DATA $HOME/.local/share/zdata
@@ -16,4 +14,4 @@ set -gx VAULT_ADDR https://vault.bonus.ly
 
 source /opt/asdf-vm/asdf.fish
 
-direnv hook fish | source
+asdf exec direnv hook fish | source
