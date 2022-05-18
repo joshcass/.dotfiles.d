@@ -6,6 +6,8 @@ alias tf="terraform"
 
 alias direnv="asdf exec direnv"
 
+alias nodebuild="asdf nodejs nodebuild"
+
 # fancy ls commands
 # -l  long format
 # -F  / after dirs, * after exe, @ after symlink
