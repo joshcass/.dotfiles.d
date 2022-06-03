@@ -33,7 +33,7 @@ fancy_echo "Creating symlinks for dotfiles"
 echo "Creating new symlinks"
 ls $SETUP_DIR/conf.d/home | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/home/{} $HOME/.{}
 
-fancy_echo "Creating symlings for config files"
+fancy_echo "Creating symlinks for config files"
 ls $SETUP_DIR/conf.d/config | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/config/{} $HOME/.config/{}
 
 fancy_echo "Setting up termintaor"
