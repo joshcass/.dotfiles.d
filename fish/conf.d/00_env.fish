@@ -13,5 +13,3 @@ set -gx Z_EXCLUDE \x5e$HOME\x24
 set -gx VAULT_ADDR https://vault.bonus.ly
 
 source /opt/asdf-vm/asdf.fish
-
-asdf exec direnv hook fish | source

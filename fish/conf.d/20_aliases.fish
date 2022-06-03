@@ -4,8 +4,6 @@ alias G="rg -i"
 alias aset="asdf"
 alias tf="terraform"
 
-alias direnv="asdf exec direnv"
-
 alias nodebuild="asdf nodejs nodebuild"
 
 # fancy ls commands
