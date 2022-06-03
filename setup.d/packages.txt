@@ -1,4 +1,5 @@
 automake
+alacritty
 ccid
 chromium
 clang
@@ -14,14 +15,15 @@ jq
 libvterm
 make
 nfs-utils
+pdfarranger
 pkgfile
 prettier
 redshift
 ripgrep
+rust-analyzer
 shellcheck
 shfmt
 stylelint
-terminator
 tidy
 ttf-hack
 vim

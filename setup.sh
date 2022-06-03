@@ -57,6 +57,12 @@ ln -sf $SETUP_DIR/i3status $HOME/.config/i3status
 
 fancy_echo "Done."
 
+fancy_echo "Symlinking alacritty config"
+rm -rf $HOME/.config/alacritty
+ln -sf $SETUP_DIR/alacritty $HOME/.config/alacritty
+
+fancy_echo "Done."
+
 read -p 'Reboot now ? [y/N]' reboot
 
 if [ "$reboot" = "y" ] || [ "$reboot" = "Y" ]; then
