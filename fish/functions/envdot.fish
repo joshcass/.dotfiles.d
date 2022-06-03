@@ -1,3 +1,3 @@
 function envdot
-    echo "PATH_add bin\n use asdf" >.envrc
+    echo -e "PATH_add bin\nuse asdf" >.envrc
 end
