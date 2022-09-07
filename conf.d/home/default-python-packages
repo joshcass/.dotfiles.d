@@ -1,4 +1,6 @@
+isort
 nose
 pipenv
+pyflakes
 pytest
 python-lsp-server

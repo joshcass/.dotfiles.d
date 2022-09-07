@@ -17,8 +17,11 @@ sudo true
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
 
-fancy_echo "Installing AUR packages"
-xargs -a $SETUP_DIR/setup.d/aur.txt pamac build --no-confirm
+fancy_echo "Installing paru"
+sh $SETUP_DIR/setup.d/paru.sh
+
+fancy_echo "Install aur packages"
+paru -S --noconfirm - <$SETUP_DIR/setupd.d/aur.txt
 
 fancy_echo "Updating pkgfile"
 sudo pkgfile -u
@@ -36,9 +39,6 @@ ls $SETUP_DIR/conf.d/home | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/home/{} $HO
 fancy_echo "Creating symlinks for config files"
 ls $SETUP_DIR/conf.d/config | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/config/{} $HOME/.config/{}
 
-fancy_echo "Setting up termintaor"
-sh $SETUP_DIR/setup.d/terminator.sh
-
 fancy_echo "Enabling natural scroll"
 sudo sed -i '/EndSection/ i \    Option "NaturalScrolling" "true"' /etc/X11/xorg.conf.d/30-touchpad.conf
 
@@ -50,9 +50,9 @@ fancy_echo "Enabling redshift"
 systemctl --user enable redshift
 
 fancy_echo "Symlinking i3 config"
-rm -rf $HOME/.i3
+rm -rf $HOME/.config/i3
 rm -rf $HOME/.config/i3status
-ln -sf $SETUP_DIR/i3 $HOME/.i3
+ln -sf $SETUP_DIR/i3 $HOME/.config/i3
 ln -sf $SETUP_DIR/i3status $HOME/.config/i3status
 
 fancy_echo "Done."

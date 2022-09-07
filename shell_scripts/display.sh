@@ -7,8 +7,6 @@
 #
 #https://gist.github.com/amanusk/6b79d407945ca79caa945ce2658fd987
 #
-. $HOME/.dmenurc
-
 # This is your default laptop screen, detect by running `xrandr`
 INTERNAL_OUTPUT="eDP1"
 
@@ -16,7 +14,7 @@ INTERNAL_OUTPUT="eDP1"
 choices="laptop\nexternal\ndual\nclone"
 
 # Your choice in dmenu will determine what xrandr command to run
-chosen=$(echo -e $choices | dmenu $DMENU_OPTIONS -i -p display:)
+chosen=$(echo -e $choices | dmenu -fn "Noto-10.5" -nb "#2E3440" -nf "#ECEFF4" -sb "#5E81AC" -sf "#ECEFF4" -i -p display:)
 
 # This is used to determine which external display you have connected
 # This may vary between OS. e.g VGA1 instead of VGA-1
@@ -37,8 +35,8 @@ reset_desktop() {
 
 # xrander will run and turn on the display you want, if you have an option for 3 displays, this will need some modifications
 case "$chosen" in
-external) xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto --primary && reset_desktop ;;
-laptop) xrandr --output $INTERNAL_OUTPUT --auto --primary --output $EXTERNAL_OUTPUT --off && reset_desktop ;;
-clone) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT && reset_desktop ;;
-dual) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT --primary && reset_desktop ;;
+	external) xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto --primary && reset_desktop ;;
+	laptop) xrandr --output $INTERNAL_OUTPUT --auto --primary --output $EXTERNAL_OUTPUT --off && reset_desktop ;;
+	clone) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT && reset_desktop ;;
+	dual) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT --primary && reset_desktop ;;
 esac

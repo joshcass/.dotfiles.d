@@ -3,7 +3,7 @@
 clone_doom() {
     if [ ! -d $HOME/.emacs.d ]; then
         echo "Cloning Doom repo into ~/.emacs.d"
-        git clone --depth 1 https://github.com/hlissner/doom-emacs $HOME/.emacs.d
+        git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
         echo "Installing doom"
         $HOME/.emacs.d/bin/doom install
     else

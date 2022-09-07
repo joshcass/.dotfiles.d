@@ -1,1 +1,7 @@
 asdf-vm
+i3exit
+i3-scrot
+nerd-fonts-hack
+pa-applet-git
+terraform-ls
+

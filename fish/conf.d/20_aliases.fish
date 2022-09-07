@@ -3,6 +3,7 @@ alias say="spd-say"
 alias G="rg -i"
 alias aset="asdf"
 alias tf="terraform"
+alias yay="paru"
 
 alias nodebuild="asdf nodejs nodebuild"
 
