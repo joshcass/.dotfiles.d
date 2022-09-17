@@ -1,6 +1,15 @@
+click
+dbus-python
+black
+build
+installer
 isort
 nose
 pipenv
 pyflakes
 pytest
 python-lsp-server
+pyxdg
+setuptools_scm
+wheel
+xdg

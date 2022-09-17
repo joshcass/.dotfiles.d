@@ -55,6 +55,8 @@ shellcheck
 shfmt
 stylelint
 tidy
+ttf-arphic-uming
+ttf-indic-otf
 unzip
 vim
 vivaldi

@@ -26,8 +26,8 @@ abbr -ag ems systemctl status --user emacs
 abbr -ag dotfiles cd $DOTFILES
 
 # Ruby/Rails
-abbr -ag be bundle exec
 abbr -ag bn bundle
+abbr -ag rs rspec
 
 # Terraform
 abbr -ag tfp terraform plan

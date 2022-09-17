@@ -27,7 +27,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-;; (setq org-directory "~/Nextcloud/org")
+(setq org-directory "~/Nextcloud/org")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -49,6 +49,7 @@
   (setq calendar-longitude -121.797867)
   (change-theme 'doom-solarized-light 'doom-solarized-dark))
 
+;; add some extra lsp modes
 (after! lsp-mode
   (lsp-register-custom-settings
    '(("gopls.experimentalWorkspaceModule" t t)))
@@ -57,6 +58,25 @@
    (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/bin/terraform-ls" "serve"))
                     :major-modes '(terraform-mode)
                     :server-id 'terraform-ls)))
+
+;; disable evil for git timemachine
+;; @see https://bitbucket.org/lyro/evil/issue/511/let-certain-minor-modes-key-bindings
+(eval-after-load 'git-timemachine
+  '(progn
+     (evil-make-overriding-map git-timemachine-mode-map 'normal)
+     ;; force update evil keymaps after git-timemachine-mode loaded
+     (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))
+
+;; disable mouse globally
+;; https://github.com/purcell/disable-mouse
+(use-package! disable-mouse
+  :config
+  (global-disable-mouse-mode)
+  (mapc #'disable-mouse-in-keymap
+        (list evil-motion-state-map
+              evil-normal-state-map
+              evil-visual-state-map
+              evil-insert-state-map)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
