@@ -24,6 +24,7 @@ sudo pacman -S --needed i3
 fancy_echo "Removing previous install"
 sudo rm -r "$SETUP_DIR"
 
+fancy_echo "Cloning dotfiles repo"
 git clone -b arm64 --single-branch https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 
 fancy_echo "Installing package groups"
