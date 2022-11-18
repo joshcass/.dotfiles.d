@@ -12,9 +12,14 @@ fancy_echo() {
 
 export SETUP_DIR=$HOME/.dotfiles.d
 
+sudo true
+
+fancy_echo "Cloning dotfiles repo"
 git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 
-sudo true
+fancy_echo "Installing package groups"
+sudo pacman -S --needed base-devel
+sudo pacman -S --needed i3
 
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
