@@ -24,7 +24,7 @@ sudo pacman -S --needed i3
 fancy_echo "Removing previous install"
 sudo rm -r "$SETUP_DIR"
 
-git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
+git clone -b arm64 --single-branch https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
