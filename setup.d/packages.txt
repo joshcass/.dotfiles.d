@@ -55,6 +55,7 @@ shfmt
 stylelint
 tidy
 ttf-arphic-uming
+ttf-hack-nerd
 ttf-indic-otf
 unzip
 vim
