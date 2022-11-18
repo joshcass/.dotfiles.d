@@ -51,7 +51,6 @@ redshift
 ripgrep
 rust-analyzer
 sddm
-shellcheck
 shfmt
 stylelint
 tidy
@@ -60,7 +59,6 @@ ttf-hack-nerd
 ttf-indic-otf
 unzip
 vim
-vivaldi
 xautolock
 xclip
 xfce4-power-manager
