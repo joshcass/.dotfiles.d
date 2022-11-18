@@ -19,7 +19,6 @@ fd
 fish
 gcc
 gnome-keyring
-i3
 inetutils
 jq
 libreoffice-fresh
