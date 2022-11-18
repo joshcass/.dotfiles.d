@@ -28,7 +28,7 @@ fancy_echo "Installing paru"
 sh $SETUP_DIR/setup.d/paru.sh
 
 fancy_echo "Install aur packages"
-paru -S --noconfirm - <$SETUP_DIR/setupd.d/aur.txt
+paru -S --noconfirm - <$SETUP_DIR/setup.d/aur.txt
 
 fancy_echo "Updating pkgfile"
 sudo pkgfile -u
@@ -67,13 +67,16 @@ rm -rf $HOME/.config/alacritty
 ln -sf $SETUP_DIR/alacritty $HOME/.config/alacritty
 
 fancy_echo "Cloning submodules"
-git submodule init
-git submoudle update --remote
+(
+	cd "$SETUP_DIR"
+	git submodule init
+	git submodule update --remote
+)
 
 fancy_echo "Linking themes"
 sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo ln -sf $SETUP_DIR/theming/Nordic/kde/sddm/Nordic-darker /usr/share/sddm/themes/nordic
-cat <<EOF | sudo tee -a /etc/sddm.conf.d/theme.conf
+cat <<EOF | sudo tee /etc/sddm.conf.d/theme.conf
 [Theme]
 Current=nordic
 EOF
