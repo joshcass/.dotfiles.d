@@ -1,4 +1,4 @@
-set --global pure_version 4.1.1 # For bug report and tag-after-merge workflow
+set --global pure_version 4.3.1 # For bug report and tag-after-merge workflow
 
 # Base colors
 set --universal pure_color_primary blue
@@ -83,3 +83,6 @@ set --universal pure_color_prefix_root_prompt pure_color_danger
 
 # Compact mode
 set --universal pure_enable_single_line_prompt false
+
+# Detect when running in container (e.g. docker, podman, LXC/LXD)
+set --universal pure_enable_container_detection true

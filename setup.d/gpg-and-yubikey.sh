@@ -15,23 +15,17 @@ update_gpg_agent() {
 }
 
 add_pam_env() {
-    if [ ! -f $HOME/.pam_environment ]; then
-        echo "Creating ~/.pam_environment"
-        echo | tee $HOME/.pam_environment <<END_TEXT
-SSH_AGENT_PID	DEFAULT=
-SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-END_TEXT
-    else
-        echo ".pam_environmnt already created"
-    fi
+    cat <<EOF | sudo tee -a /etc/security/pam_env.conf
+SSH_AGENT_PID DEFAULT=
+SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+EOF
 }
 
-echo "Adding/updating GPG key from keybase.io"
-curl https://keybase.io/joshcass/key.asc | gpg --import
+echo "Adding GPG key"
+gpg --recv-keys 9ED743C49E12ED4077E26A8BBBF76C7AC21E4CBD
 
 echo "Linking GPG keys from Yubikey smartcard"
 gpg --card-status
 
-disable_gnome_keyring_autostart
 update_gpg_agent
 add_pam_env

@@ -12,6 +12,8 @@ fancy_echo() {
 
 export SETUP_DIR=$HOME/.dotfiles.d
 
+git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
+
 sudo true
 
 fancy_echo "Installing packages"
@@ -55,11 +57,21 @@ rm -rf $HOME/.config/i3status
 ln -sf $SETUP_DIR/i3 $HOME/.config/i3
 ln -sf $SETUP_DIR/i3status $HOME/.config/i3status
 
-fancy_echo "Done."
-
 fancy_echo "Symlinking alacritty config"
 rm -rf $HOME/.config/alacritty
 ln -sf $SETUP_DIR/alacritty $HOME/.config/alacritty
+
+fancy_echo "Cloning submodules"
+git submodule init
+git submoudle update --remote
+
+fancy_echo "Linking themes"
+sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
+sudo ln -sf $SETUP_DIR/theming/Nordic/kde/sddm/Nordic-darker /usr/share/sddm/themes/nordic
+cat <<EOF | sudo tee -a /etc/sddm.conf.d/theme.conf
+[Theme]
+Current=nordic
+EOF
 
 fancy_echo "Done."
 
