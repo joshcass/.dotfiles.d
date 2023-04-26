@@ -4,7 +4,7 @@
   signingkey = B6FA5BC9
 
 [color]
-  ui = true
+  ui = auto
 
 [color "diff-highlight"]
   oldNormal = red
@@ -32,7 +32,7 @@
 
 [core]
   autocrlf = input
-  safecrlf = true
+  safecrlf = false
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore-global
 
@@ -55,7 +55,7 @@
   cara = commit --amend --reset-author
   email-guess = !bash $DOTFILES/git/scripts/email-guess
   unwip = reset HEAD~
-  cleanup = !bash -c 'git gc --auto --aggressive && git remote prune origin'
+  cleanup = !bash $DOTFILES/git/scripts/cleanup
   hide = update-index --skip-worktree
   unhide = update-index --no-skip-worktree
   hidden = "!git ls-files -v | grep ^[hsS] | cut -c 3-"

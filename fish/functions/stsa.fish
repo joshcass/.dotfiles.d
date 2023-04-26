@@ -11,7 +11,10 @@ function stsa
             set acn 079955430952
         case development
             set acn 522416699905
-
+        case sandbox
+            set acn 923779237983
+        case '*'
+            set acn $argv
     end
 
     set creds (aws sts assume-role \

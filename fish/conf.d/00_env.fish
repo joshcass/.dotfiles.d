@@ -2,7 +2,7 @@ set -gx DOTFILES $HOME/.dotfiles.d
 
 set -gx EDITOR /usr/bin/emacs
 
-set -gx BROWSER /usr/bin/vivaldi-stable
+set -gx BROWSER /usr/bin/firefox
 
 set -gx Z_DATA $HOME/.local/share/zdata
 

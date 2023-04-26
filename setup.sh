@@ -76,11 +76,13 @@ fancy_echo "Cloning submodules"
 fancy_echo "Linking themes"
 sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo cp -r $SETUP_DIR/theming/Nordic/kde/sddm/Nordic-darker /usr/share/sddm/themes/nordic
-sudo mkdir /etc/sddm.conf.d
+sudo mkdir -p /etc/sddm.conf.d
 cat <<EOF | sudo tee /etc/sddm.conf.d/theme.conf
 [Theme]
 Current=nordic
 EOF
+mkdir -p $HOME/.fonts
+ln -sf $SETUP_DIR/conky/ConkySymbols.ttf $HOME/.fonts
 
 fancy_echo "Done."
 

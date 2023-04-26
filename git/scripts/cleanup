@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git gc --auto --aggressive
+git remote prune origin
+git branch --format "%(refname:short)" | rg -iv 'master|main' | xargs -I{} git branch -D {}

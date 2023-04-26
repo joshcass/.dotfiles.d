@@ -430,7 +430,7 @@ live_config_reload: true
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-# Offer IPC using `alacritty msg` (unix only)
+# Offer IPC using `alacritty msg` (unix-shell Cargo.lock nix only)
 #ipc_socket: true
 
 #mouse:

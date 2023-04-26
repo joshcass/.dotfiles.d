@@ -1,5 +1,5 @@
-automake
 alacritty
+bash-language-server
 blueman
 bluez
 capitaine-cursors
@@ -17,6 +17,7 @@ dmenu
 dunst
 emacs-nativecomp
 fd
+firefox
 fish
 gcc
 gnome-keyring
@@ -41,7 +42,6 @@ pcmanfm
 pdfarranger
 pkgfile
 plasma-framework
-postgresql-libs
 prettier
 pulseaudio
 pulseaudio-bluetooth
@@ -49,7 +49,6 @@ pwgen
 ranger
 redshift
 ripgrep
-rust-analyzer
 sddm
 shellcheck
 shfmt
@@ -59,10 +58,12 @@ ttf-arphic-uming
 ttf-hack-nerd
 ttf-indic-otf
 unzip
+viewnior
 vim
-vivaldi
 xautolock
 xclip
+xf86-input-wacom
 xfce4-power-manager
 xorg-fonts-misc
 xsel
+yaml-language-server
