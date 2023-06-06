@@ -33,6 +33,12 @@ paru -S --noconfirm - <$SETUP_DIR/setup.d/aur.txt
 fancy_echo "Updating pkgfile"
 sudo pkgfile -u
 
+fancy_echo "Installing nix"
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
+
+fancy_echo "Installing devbox"
+curl -fsSL https://get.jetpack.io/devbox | bash
+
 fancy_echo "Setting up Doom"
 sh $SETUP_DIR/setup.d/doom.sh
 

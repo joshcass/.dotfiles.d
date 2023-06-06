@@ -20,4 +20,6 @@ fish_add_path $HOME/.emacs.d/bin
 
 fish_add_path $HOME/.dotfiles.d/i3/scripts
 
+direnv hook fish | source
+
 source /opt/asdf-vm/asdf.fish

@@ -1,5 +1,4 @@
 alacritty
-bash-language-server
 blueman
 bluez
 capitaine-cursors
@@ -11,6 +10,7 @@ conky
 ctags
 cups
 diff-so-fancy
+direnv
 discount
 docker-compose
 dmenu
@@ -66,4 +66,3 @@ xf86-input-wacom
 xfce4-power-manager
 xorg-fonts-misc
 xsel
-yaml-language-server
