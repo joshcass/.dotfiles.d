@@ -7,3 +7,6 @@
 [submodule "theming/Nordic"]
 	path = theming/Nordic
 	url = https://github.com/joshcass/Nordic.git
+[submodule "theming/Nordic-Polar"]
+	path = theming/Nordic-Polar
+	url = https://github.com/joshcass/Nordic-Polar

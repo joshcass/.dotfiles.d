@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-pactl set-source-mute @DEFAULT_SOURCE@ toggle
-# need notification
-# ideally a way to tell when it's on or off

@@ -4,21 +4,14 @@
 
 update_gpg_agent() {
     local enable_ssh
-    enable_ssh="enable-ssh-support"
+    enable_ssh="enable-ssh-support\npinentry-program $DOTFILES/scripts.d/pinentry\n"
 
     if ! grep "$enable_ssh" $HOME/.gnupg/gpg-agent.conf >/dev/null 2>&1; then
         echo "Adding '$enable_ssh' to gpg-agent.conf"
-        sh -c "echo $enable_ssh >> $HOME/.gnupg/gpg-agent.conf"
+        sh -c "printf $enable_ssh >> $HOME/.gnupg/gpg-agent.conf"
     else
         echo "'$enable_ssh' already added to gpg-agent.conf"
     fi
-}
-
-add_pam_env() {
-    cat <<EOF | sudo tee -a /etc/security/pam_env.conf
-SSH_AGENT_PID DEFAULT=
-SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-EOF
 }
 
 echo "Adding GPG key"
@@ -28,4 +21,3 @@ echo "Linking GPG keys from Yubikey smartcard"
 gpg --card-status
 
 update_gpg_agent
-add_pam_env

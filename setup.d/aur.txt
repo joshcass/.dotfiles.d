@@ -1,7 +1,5 @@
-asdf-vm
-i3exit
-i3-scrot
-nerd-fonts-hack
+emacs-gcc-wayland-devel-bin
 pa-applet-git
+sworkstyle
 terraform-ls
 

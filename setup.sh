@@ -17,10 +17,6 @@ sudo true
 fancy_echo "Cloning dotfiles repo"
 git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 
-fancy_echo "Installing package groups"
-sudo pacman -S --needed base-devel
-sudo pacman -S --needed i3
-
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
 
@@ -52,25 +48,13 @@ ls $SETUP_DIR/conf.d/home | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/home/{} $HO
 fancy_echo "Creating symlinks for config files"
 ls $SETUP_DIR/conf.d/config | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/config/{} $HOME/.config/{}
 
-fancy_echo "Enabling natural scroll"
-sudo sed -i '/EndSection/ i \    Option "NaturalScrolling" "true"' /etc/X11/xorg.conf.d/30-touchpad.conf
-
 fancy_echo "Configuring GPG and Yubikey"
 # need to enable pcscd.socket too
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
-fancy_echo "Enabling redshift"
-systemctl --user enable redshift
-
-fancy_echo "Symlinking i3 config"
-rm -rf $HOME/.config/i3
-rm -rf $HOME/.config/i3status
-ln -sf $SETUP_DIR/i3 $HOME/.config/i3
-ln -sf $SETUP_DIR/i3status $HOME/.config/i3status
-
-fancy_echo "Symlinking alacritty config"
-rm -rf $HOME/.config/alacritty
-ln -sf $SETUP_DIR/alacritty $HOME/.config/alacritty
+fancy_echo "Enabling systemd units"
+systemctl --user enable gammastep
+systemctl --user enable pulseaudio
 
 fancy_echo "Cloning submodules"
 (
@@ -81,14 +65,7 @@ fancy_echo "Cloning submodules"
 
 fancy_echo "Linking themes"
 sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
-sudo cp -r $SETUP_DIR/theming/Nordic/kde/sddm/Nordic-darker /usr/share/sddm/themes/nordic
-sudo mkdir -p /etc/sddm.conf.d
-cat <<EOF | sudo tee /etc/sddm.conf.d/theme.conf
-[Theme]
-Current=nordic
-EOF
-mkdir -p $HOME/.fonts
-ln -sf $SETUP_DIR/conky/ConkySymbols.ttf $HOME/.fonts
+sudo ln -sf $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
 fancy_echo "Done."
 

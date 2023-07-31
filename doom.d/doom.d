@@ -1,0 +1,1 @@
+/home/jc/.dotfiles.d/doom.d
