@@ -231,7 +231,7 @@ for_window [app_id="zoom"] floating enable, border pixel 1
 for_window [app_id="seahorse"] floating enable, border pixel 1
 for_window [app_id="blueman-manager"] floating enable, border pixel 1
 
-assign [app_id="brave-browser"] workspace number 1
+assign [app_id="firefox"] workspace number 1
 assign [app_id="chromium"] workspace number 2
 assign [app_id="Slack"] workspace number 2
 assign [app_id="emacs"] workspace number 3

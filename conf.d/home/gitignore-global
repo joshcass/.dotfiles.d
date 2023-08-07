@@ -38,19 +38,8 @@ Thumbs.db
 # emacs javascript file
 .tern-port
 
-# env files
-.envrc
-.env
-.rufo
-
 # emacs autosave file
 .#*.*
 
 # ctags
 TAGS
-
-# ignore asdf tool versions
-.tool-versions
-
-# ignore redisdata for docker
-redisdata/

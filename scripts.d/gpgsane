@@ -1,3 +1,1 @@
 gpg-connect-agent updatestartuptty /bye >/dev/null # make sure gpg agent has a good tty for pinentry
-
-/usr/bin/pinentry-curses "$@"
