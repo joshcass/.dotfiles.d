@@ -1,7 +1,5 @@
-alias pbcopy='xsel --clipboard --input'
 alias G="rg -i"
 alias aset="asdf"
-alias tf="terraform"
 alias yay="paru"
 
 # fancy ls commands

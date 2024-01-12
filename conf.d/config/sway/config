@@ -101,6 +101,11 @@ exec sworkstyle &> /tmp/sworkstyle.log
     bindsym XF86AudioMute exec pulsemixer --toggle-mute
     bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5 --max-volume 100
     bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+    bindcode 171 playerctl next
+    bindcode 173 playerctl previous
+    # XF86AudioPlayPause: xmodmap -pke | grep XF86AudioPlay
+    # https://github.com/swaywm/sway/issues/4783
+    bindcode 172 exec playerctl play-pause
 #
 # Moving around:
 #
@@ -230,6 +235,7 @@ for_window [app_id="pavucontrol"] floating enable, border pixel 1
 for_window [app_id="zoom"] floating enable, border pixel 1
 for_window [app_id="seahorse"] floating enable, border pixel 1
 for_window [app_id="blueman-manager"] floating enable, border pixel 1
+for_window [title="Picture-in-Picture"] floating enable, sticky enable, border pixel 1
 
 assign [app_id="firefox"] workspace number 1
 assign [app_id="chromium"] workspace number 2

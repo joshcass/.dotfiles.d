@@ -21,19 +21,8 @@ abbr -ag dev cd $HOME/Documents
 abbr -ag cdr cd '(git rev-parse --show-toplevel)'
 abbr -ag ... cd ../..
 abbr -ag .... cd ../../..
-abbr -ag emr systemctl restart --user emacs
-abbr -ag ems systemctl status --user emacs
-abbr -ag dotfiles cd $DOTFILES
+abbr -ag dfs cd $DOTFILES
 
 # Ruby/Rails
 abbr -ag bn bundle
 abbr -ag rs rspec
-
-# Terraform
-abbr -ag tfp terraform plan
-abbr -ag tfa terraform apply
-abbr -ag tfi terraform init
-abbr -ag tfv terraform validate
-
-# K8S
-abbr -ag ktl kubectl

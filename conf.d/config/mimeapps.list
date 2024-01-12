@@ -17,6 +17,7 @@ x-scheme-handler/mailto=firefox.desktop;
 message/rfc822=chromium.desktop
 application/pdf=com.github.jeromerobert.pdfarranger.desktop;libreoffice-draw.desktop;
 application/x-bittorrent=deluge.desktop
+x-scheme-handler/magnet deluge.desktop
 x-scheme-handler/postman=Postman.desktop
 
 [Added Associations]

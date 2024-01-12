@@ -1,1 +1,2 @@
+#!/bin/bash
 /usr/bin/slack --enable-features=WaylandWindowDecorations --ozone-platform=wayland --enable-features=WebRTCPipeWireCapture

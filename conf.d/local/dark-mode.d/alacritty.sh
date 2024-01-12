@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sed -i -e "s/^colors:.*/colors: *solarized_dark/" $HOME/.config/alacritty/colors.yml
+sed -i -e "s/solarized_light/solarized_dark/" $HOME/.config/alacritty/alacritty.toml

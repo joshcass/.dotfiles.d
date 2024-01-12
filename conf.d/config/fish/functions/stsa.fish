@@ -13,6 +13,8 @@ function stsa
             set acn 522416699905
         case sandbox
             set acn 923779237983
+        case operations
+            set acn 516380219001
         case '*'
             set acn $argv
     end
