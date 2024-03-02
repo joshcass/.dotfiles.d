@@ -1,5 +1,8 @@
+darkman
 emacs-gcc-wayland-devel-bin
 pa-applet-git
+swaylock-effects
 sworkstyle
 terraform-ls
+
 

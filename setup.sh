@@ -64,6 +64,7 @@ fancy_echo "Cloning submodules"
 )
 
 fancy_echo "Linking themes"
+sudo mkdir -p /usr/share/themes
 sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo ln -sf $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
