@@ -3,7 +3,7 @@
     "height": 25,
     "spacing": 4,
     "modules-left": ["sway/workspaces"],
-    "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "temperature", "disk", "disk#home", "pulseaudio", "bluetooth", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "temperature", "disk", "disk#home", "pulseaudio", "bluetooth", "battery", "clock", "tray"],
     "idle_inhibitor": {
         "format": "{icon}",
         "tooltip": false,
@@ -62,5 +62,16 @@
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "format-disabled": "",
         "on-click": "blueman-manager"
-    }
+    },
+    "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+    },
 }

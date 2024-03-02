@@ -66,6 +66,7 @@ exec nm-applet
 exec gammastep
 exec warp-taskbar
 exec sworkstyle &> /tmp/sworkstyle.log
+exec_always laptop_mode
 
 ### Key bindings
 #
