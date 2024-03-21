@@ -78,6 +78,18 @@
               evil-visual-state-map
               evil-insert-state-map)))
 
+;; tell doom to use bash to run child processes because fish is
+;; explicitly non-POSIX which can result in unexepected errors
+;; within emacs
+(setq shell-file-name (executable-find "bash"))
+;; but I still want a fish shell when I open an interactive
+;; shell buffer
+(setq-default vterm-shell (executable-find "fish"))
+(setq-default explicit-shell-file-name (executable-find "fish"))
+
+;; tell apheleia to use ruby standard instead of the ruby prettier plugin
+(setq-hook! 'ruby-mode-hook +format-with 'ruby-standard)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one

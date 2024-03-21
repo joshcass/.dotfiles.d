@@ -7,13 +7,12 @@ abbr -ag ga git add
 abbr -ag ghs git hist
 abbr -ag gf git fetch
 abbr -ag gm git merge
-abbr -ag gka git commit -a
 abbr -ag gk git commit
 abbr -ag gp git better-push
 abbr -ag gl git log
 abbr -ag gu git unwip
 abbr -ag gr git reflog
-abbr -ag gt git tag -a
+abbr -ag gre git restore .
 
 # Shell
 abbr -ag -- - 'cd -'
