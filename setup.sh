@@ -20,8 +20,8 @@ git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
 
-fancy_echo "Installing paru"
-sh $SETUP_DIR/setup.d/paru.sh
+fancy_echo "Installing yay"
+sh $SETUP_DIR/setup.d/yay.sh
 
 fancy_echo "Install aur packages"
 paru -S --noconfirm - <$SETUP_DIR/setup.d/aur.txt

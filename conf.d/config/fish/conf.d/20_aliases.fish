@@ -1,6 +1,5 @@
 alias G="rg -i"
 alias aset="asdf"
-alias yay="paru"
 
 # fancy ls commands
 # -l  long format
