@@ -42,13 +42,6 @@
 ;; Start maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(use-package! theme-changer
-  :config
-  (setq calendar-location-name "North Bend, WA")
-  (setq calendar-latitude 47.480720)
-  (setq calendar-longitude -121.781850)
-  (change-theme 'doom-solarized-light 'doom-solarized-dark))
-
 ;; add some extra lsp modes
 (after! lsp-mode
   (lsp-register-custom-settings
