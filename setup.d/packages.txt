@@ -1,5 +1,4 @@
 alacritty
-autotiling-rs
 bemenu-wayland
 blueman
 bluez

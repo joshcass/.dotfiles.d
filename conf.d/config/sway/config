@@ -63,7 +63,8 @@ exec swayidle -w \
 # Startup execs
 #
 exec nm-applet
-exec_always autotiling
+exec gammastep
+exec warp-taskbar
 exec sworkstyle &> /tmp/sworkstyle.log
 
 ### Key bindings
