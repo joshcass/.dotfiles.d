@@ -19,7 +19,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run -p run --fn "Noto Sans Regular 11" --tb "#81A1C1" --tf "#3B4242" --fb "#3B4242" --ff "#ECEFF4" --nb "#3B4242" --nf "#ECEFF4" --hb "#3B4242" --hf "#81A1C1" --fbb "#3B4252" --fbf "#ECEff4" --sb "#3B4252" --sf "#ECEff4" --ab "#3B4252" --af "#ECEff4" | xargs swaymsg exec --
+set $menu bemenu-run -p run --fn "Arimo Nerd Font 12" --tb "#81A1C1" --tf "#3B4242" --fb "#3B4242" --ff "#ECEFF4" --nb "#3B4242" --nf "#ECEFF4" --hb "#3B4242" --hf "#81A1C1" --fbb "#3B4252" --fbf "#ECEff4" --sb "#3B4252" --sf "#ECEff4" --ab "#3B4252" --af "#ECEff4" | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -241,7 +241,7 @@ for_window [title="Picture-in-Picture"] floating enable, sticky enable, border p
 assign [app_id="firefox"] workspace number 1
 assign [app_id="chromium"] workspace number 2
 assign [app_id="Slack"] workspace number 2
-assign [app_id="emacs"] workspace number 3
+assign [app_id="neovide"] workspace number 3
 assign [app_id="Alacritty"] workspace number 4
 
 # Status Bar:

@@ -1,6 +1,6 @@
 set -gx DOTFILES $HOME/.dotfiles.d
 
-set -gx EDITOR /usr/bin/emacs
+set -gx EDITOR /usr/bin/neovide
 
 set -gx BROWSER /usr/bin/chromium
 
@@ -19,8 +19,6 @@ set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set fish_function_path $HOME/.config/fish/functions/pure/functions $fish_function_path
 
 set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_path
-
-fish_add_path $HOME/.emacs.d/bin
 
 fish_add_path $HOME/.dotfiles.d/scripts.d
 

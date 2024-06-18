@@ -2,7 +2,7 @@
     "position": "bottom",
     "height": 25,
     "spacing": 4,
-    "modules-left": ["sway/workspaces", "custom/media"],
+    "modules-left": ["sway/workspaces"],
     "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "temperature", "disk", "disk#home", "pulseaudio", "bluetooth", "clock", "tray"],
     "idle_inhibitor": {
         "format": "{icon}",
@@ -25,7 +25,7 @@
         "tooltip": true
     },
     "memory": {
-        "format": " {}%",
+        "format": " {}%",
         "tooltip-format": "mem: {used:0.1f}G / {total:0.1f}G\nswap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
     },
     "temperature": {
@@ -44,20 +44,9 @@
     "pulseaudio": {
         "format": " {volume}%",
         "format-bluetooth": " {volume}%",
-        "format-bluetooth-muted": " ",
-        "format-muted": "",
+        "format-bluetooth-muted": "  ",
+        "format-muted": "",
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null"
     },
     "disk": {
         "format": " {percentage_used}%",

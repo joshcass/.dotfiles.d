@@ -1,13 +1,13 @@
 #!/bin/bash
 
 fancy_echo() {
-	local cyan=$(tput setaf 6)
-	local yellow=$(tput setaf 3)
-	local normal=$(tput sgr0)
-	local fmt="$1"
-	shift
+  local cyan=$(tput setaf 6)
+  local yellow=$(tput setaf 3)
+  local normal=$(tput sgr0)
+  local fmt="$1"
+  shift
 
-	printf "\n${cyan}~~> ${yellow}$fmt${normal}\n" "$@"
+  printf "\n${cyan}~~> ${yellow}$fmt${normal}\n" "$@"
 }
 
 export SETUP_DIR=$HOME/.dotfiles.d
@@ -35,9 +35,6 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 fancy_echo "Installing devbox"
 curl -fsSL https://get.jetpack.io/devbox | bash
 
-fancy_echo "Setting up Doom"
-sh $SETUP_DIR/setup.d/doom.sh
-
 fancy_echo "Setting Fish as shell"
 sh $SETUP_DIR/setup.d/fish.sh
 
@@ -58,9 +55,9 @@ systemctl --user enable pulseaudio
 
 fancy_echo "Cloning submodules"
 (
-	cd "$SETUP_DIR"
-	git submodule init
-	git submodule update --remote
+  cd "$SETUP_DIR"
+  git submodule init
+  git submodule update --remote
 )
 
 fancy_echo "Linking themes"
@@ -73,8 +70,8 @@ fancy_echo "Done."
 read -p 'Reboot now ? [y/N]' reboot
 
 if [ "$reboot" = "y" ] || [ "$reboot" = "Y" ]; then
-	sudo shutdown -r now
+  sudo shutdown -r now
 else
-	printf "\n"
-	exit 0
+  printf "\n"
+  exit 0
 fi

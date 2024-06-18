@@ -21,12 +21,14 @@ gnome-keyring
 grim
 inetutils
 jq
+lazygit
 libnotify
 libreoffice-fresh
 libsecret
 libvterm
 make
 man-db
+neovide
 net-tools
 network-manager-applet
 nextcloud-client
@@ -43,7 +45,6 @@ prettier
 pulseaudio
 pulseaudio-bluetooth
 pwgen
-ranger
 ripgrep
 shellcheck
 shfmt
@@ -53,11 +54,11 @@ swappy
 swaybg
 swayidle
 tidy
+ttf-arimo-nerd
 ttf-arphic-uming
 ttf-hack-nerd
 ttf-indic-otf
 unzip
-vim
 waybar
 wireplumber
 wl-clipboard

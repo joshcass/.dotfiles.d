@@ -35,11 +35,3 @@
 ehthumbs.db
 Thumbs.db
 
-# emacs javascript file
-.tern-port
-
-# emacs autosave file
-.#*.*
-
-# ctags
-TAGS
