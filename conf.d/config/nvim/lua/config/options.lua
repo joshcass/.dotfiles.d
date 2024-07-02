@@ -5,7 +5,6 @@
 
 vim.g.node_host_prog = "/home/jc/.npm-global-packages/lib/node_modules/neovim/bin/cli.js"
 vim.g.ruby_host_prog = "/home/jc/.gem/ruby/3.0.0/bin/neovim-ruby-host"
-vim.g.neovide_theme = "light"
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 999
 
@@ -25,3 +24,8 @@ vim.g.terminal_color_12 = "#839496"
 vim.g.terminal_color_13 = "#6c71c4"
 vim.g.terminal_color_14 = "#93a1a1"
 vim.g.terminal_color_15 = "#fdf6e3"
+
+if vim.g.neovide then
+  vim.g.neovide_theme = "light"
+  vim.g.neovide_hide_mouse_when_typing = true
+end

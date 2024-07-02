@@ -8,9 +8,19 @@ local unmap = vim.keymap.del
 -- My mappings
 map("n", "<leader>fy", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Yank file path" })
 map("n", "<leader>fD", "<cmd>call delete(expand('%:p')) | bdelete!<cr>", { desc = "Delete file" })
+map("n", "\\", "<C-w>", { desc = "Show Window menu", remap = true })
+
+if vim.g.neovide then
+  map("n", "<F11>", function()
+    if vim.g.neovide_fullscreen then
+      vim.g.neovide_fullscreen = false
+    else
+      vim.g.neovide_fullscreen = true
+    end
+  end, { desc = "Toggle fullscreen" })
+end
 
 -- Terminal Mappings
-
 -- Unset lazyvim defaults
 unmap("n", "<leader>ft")
 unmap("n", "<leader>fT")

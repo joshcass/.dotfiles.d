@@ -20,8 +20,9 @@ return {
         end,
         desc = "File browser",
       },
-      { "<leader>fF", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" },
-      { "<leader>ff", LazyVim.pick("auto", { root = false }), desc = "Find Files (cwd)" },
+      { "<leader>fF", LazyVim.pick("auto"),                                          desc = "Find Files (Root Dir)" },
+      { "<leader>ff", LazyVim.pick("auto", { root = false }),                        desc = "Find Files (cwd)" },
+      { "<leader>sr", "<cmd>Telescope resume<cr>",                                   desc = "Resume" },
     },
     config = function(_, opts)
       require("telescope").setup(opts)
