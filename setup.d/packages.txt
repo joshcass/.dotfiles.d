@@ -44,7 +44,6 @@ pkgfile
 prettier
 pulseaudio
 pulseaudio-bluetooth
-pwgen
 ripgrep
 shellcheck
 shfmt
