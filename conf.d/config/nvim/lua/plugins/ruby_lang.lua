@@ -1,0 +1,28 @@
+return {
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ruby_lsp = {},
+        solargraph = { mason = false, autostart = false },
+      },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    opts = {
+      adapters = {
+        ["neotest-rspec"] = {
+          -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
+          rspec_cmd = function()
+            return vim.iter({
+              "bundle",
+              "exec",
+              "rspec",
+            }):flatten():totable()
+          end,
+        },
+      },
+    },
+  }
+}
