@@ -1,2 +1,4 @@
+darkman
+pa-applet-git
 swaylock-effects
 sworkstyle
