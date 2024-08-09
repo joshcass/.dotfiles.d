@@ -3,7 +3,7 @@
 -- Add any additional options here
 --
 vim.g.lazyvim_ruby_lsp = "ruby_lsp"
-vim.g.lazyvim_ruby_formatter = "standardb"
+vim.g.lazyvim_ruby_formatter = "standardrb"
 vim.g.direnv_silent_load = 1
 
 vim.opt.relativenumber = false
