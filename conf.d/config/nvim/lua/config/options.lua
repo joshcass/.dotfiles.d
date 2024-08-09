@@ -2,9 +2,12 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 --
-
+vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_formatter = "standardb"
 vim.g.node_host_prog = "/home/jc/.npm-global-packages/lib/node_modules/neovim/bin/cli.js"
-vim.g.ruby_host_prog = "/home/jc/.gem/ruby/3.0.0/bin/neovim-ruby-host"
+vim.g.ruby_host_prog = "/home/jc/.asdf/shims/neovim-ruby-host"
+vim.g.direnv_silent_load = 1
+
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 999
 

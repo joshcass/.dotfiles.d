@@ -8,6 +8,10 @@ end
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   group = augroup("auto_change_dir"),
   callback = function()
-    vim.cmd("silent! lcd %:p:h")
+    if vim.fn.expand("%"):match("_spec.rb") then
+      vim.cmd("silent! lcd `git rev-parse --show-toplevel`")
+    else
+      vim.cmd("silent! lcd %:p:h")
+    end
   end,
 })

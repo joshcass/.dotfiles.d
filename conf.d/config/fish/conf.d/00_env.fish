@@ -23,3 +23,5 @@ set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_p
 fish_add_path $HOME/.dotfiles.d/scripts.d
 
 direnv hook fish | source
+
+source /opt/asdf-vm/asdf.fish

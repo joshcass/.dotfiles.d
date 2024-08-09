@@ -18,6 +18,14 @@ if vim.g.neovide then
       vim.g.neovide_fullscreen = true
     end
   end, { desc = "Toggle fullscreen" })
+
+  map("n", "<leader>uB", function()
+    if vim.g.neovide_scale_factor == 1 then
+      vim.g.neovide_scale_factor = 1.25
+    else
+      vim.g.neovide_scale_factor = 1
+    end
+  end, { desc = "Toggle big mode" })
 end
 
 -- Terminal Mappings

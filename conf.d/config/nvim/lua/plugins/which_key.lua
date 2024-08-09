@@ -1,7 +1,10 @@
 return {
   { "folke/which-key.nvim", opts = {
-    defaults = {
-      ["<leader>o"] = { name = "+open" },
+    icons = {
+      mappings = false,
     },
   } },
+  require("which-key").add({
+    { "<leader>o", group = "open" },
+  }),
 }
