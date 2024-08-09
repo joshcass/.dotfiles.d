@@ -4,8 +4,6 @@
 --
 vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.lazyvim_ruby_formatter = "standardb"
-vim.g.node_host_prog = "/home/jc/.npm-global-packages/lib/node_modules/neovim/bin/cli.js"
-vim.g.ruby_host_prog = "/home/jc/.asdf/shims/neovim-ruby-host"
 vim.g.direnv_silent_load = 1
 
 vim.opt.relativenumber = false
