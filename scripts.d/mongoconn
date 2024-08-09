@@ -1,28 +1,30 @@
 #!/bin/bash
 
 case "${1}" in
-    pr)
-        cred_path="production_read_only"
-        db_uri="app-production.m5get"
-        ;;
-    pw)
-        cred_path="production_write"
-        db_uri="app-production.m5get"
-        ;;
-    sr)
-        cred_path="staging_read_only"
-        db_uri="staging-a.fjfig"
-        ;;
-    sw)
-        cred_path="staging_write"
-        db_uri="staging-a.fjfig"
-        ;;
-    *)
-        echo "no db selected"
-        exit 1
-        ;;
+pr)
+  cred_path="production_read_only"
+  db_uri="app-production.m5get"
+  ;;
+pw)
+  cred_path="production_write"
+  db_uri="app-production.m5get"
+  ;;
+sr)
+  cred_path="staging_read_only"
+  db_uri="staging-a.fjfig"
+  ;;
+sw)
+  cred_path="staging_write"
+  db_uri="staging-a.fjfig"
+  ;;
+*)
+  echo "no db selected"
+  exit 1
+  ;;
 esac
 
-creds=$(vault read recognition_atlas/creds/${cred_path} -format=json | jq -r '.data')
+lease=$(vault read recognition_atlas/creds/${cred_path} -format=json)
+creds=$(echo ${lease} | jq -r '.data')
 string="mongodb+srv://$(echo ${creds} | jq -r '.username'):$(echo ${creds} | jq -r '.password')@${db_uri}.mongodb.net/bonusly_production"
 sed -i "s#\"mongodb://localhost:27017/bonusly_production\"#${string}#" $(git rev-parse --show-toplevel)/config/mongoid.yml
+echo ${lease} | jq -r '.lease_id'
