@@ -1,66 +1,81 @@
 {
-    "position": "bottom",
-    "height": 25,
-    "spacing": 4,
-    "modules-left": ["sway/workspaces"],
-    "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "temperature", "disk", "disk#home", "pulseaudio", "bluetooth", "clock", "tray"],
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "tooltip": false,
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%d-%m | %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    },
-    "cpu": {
-        "format": " {usage}%",
-        "tooltip": true
-    },
-    "memory": {
-        "format": " {}%",
-        "tooltip-format": "mem: {used:0.1f}G / {total:0.1f}G\nswap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
-    },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        "format": " {temperatureC}°C",
-        "tooltip": false,
-    },
-    "network": {
-        "format-wifi": "{ipaddr} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-    },
-    "pulseaudio": {
-        "format": " {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-bluetooth-muted": "  ",
-        "format-muted": "",
-        "on-click": "pavucontrol"
-    },
-    "disk": {
-        "format": " {percentage_used}%",
-        "path": "/"
-    },
-    "disk#home": {
-        "format": " {percentage_used}%",
-        "path": "/home"
-    },
-    "bluetooth": {
-        "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "format-disabled": "",
-        "on-click": "blueman-manager"
+  "position": "bottom",
+  "height": 25,
+  "spacing": 4,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "disk",
+    "disk#home",
+    "pulseaudio",
+    "bluetooth",
+    "clock",
+    "tray"
+  ],
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     }
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%d-%m | %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true
+  },
+  "memory": {
+    "format": " {}%",
+    "tooltip-format": "mem: {used:0.1f}G / {total:0.1f}G\nswap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C",
+    "tooltip": false,
+  },
+  "network": {
+    "format-wifi": "{ipaddr} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected",
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-bluetooth": " {volume}%",
+    "format-bluetooth-muted": "  ",
+    "format-muted": "",
+    "on-click": "pavucontrol"
+  },
+  "disk": {
+    "format": " {percentage_used}%",
+    "path": "/"
+  },
+  "disk#home": {
+    "format": " {percentage_used}%",
+    "path": "/home"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰥉 {device_battery_percentage}%",
+    "tooltip-format-connected": "{device_alias}",
+    "format-disabled": "󰂲",
+    "on-click": "blueman-manager"
+  }
 }
