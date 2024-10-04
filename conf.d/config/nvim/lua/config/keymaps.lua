@@ -9,6 +9,7 @@ local unmap = vim.keymap.del
 map("n", "<leader>fy", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Yank file path" })
 map("n", "<leader>fD", "<cmd>call delete(expand('%:p')) | bdelete!<cr>", { desc = "Delete file" })
 map("n", "\\", "<C-w>", { desc = "Show Window menu", remap = true })
+map("n", "<leader>gt", "<cmd>Tardis git<cr>", { desc = "Git Tardis" })
 
 if vim.g.neovide then
   map("n", "<F11>", function()
