@@ -19,6 +19,7 @@ gammastep
 gcc
 gnome-keyring
 grim
+gvfs
 inetutils
 jq
 lazygit
@@ -31,13 +32,11 @@ man-db
 neovide
 net-tools
 network-manager-applet
-nextcloud-client
 nfs-utils
 noto-fonts
 noto-fonts-emoji
 p7zip
 pavucontrol
-pcmanfm
 pdfarranger
 pipewire
 pkgfile
@@ -52,6 +51,8 @@ stylelint
 swappy
 swaybg
 swayidle
+thunar
+thunar-volman
 tidy
 ttf-arimo-nerd
 ttf-arphic-uming
