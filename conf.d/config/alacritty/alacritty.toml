@@ -1,15 +1,16 @@
+[general]
 import = ["~/.config/alacritty/solarized_light.toml"]
 live_config_reload = true
 
 [font]
-normal = {family = "Hack Nerd Font"}
+normal = { family = "Hack Nerd Font" }
 size = 11.0
 
 
 [keyboard]
 bindings = [
-{action = "CreateNewWindow", key = "R", mods = "Shift|Control"},
-{action = "ToggleFullscreen", key = "F11"}
+  { action = "CreateNewWindow", key = "R", mods = "Shift|Control" },
+  { action = "ToggleFullscreen", key = "F11" },
 ]
 
 [scrolling]
