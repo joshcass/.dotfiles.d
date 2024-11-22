@@ -33,10 +33,6 @@ end
 -- Unset lazyvim defaults
 unmap("n", "<leader>ft")
 unmap("n", "<leader>fT")
-unmap("t", "<C-h>")
-unmap("t", "<C-j>")
-unmap("t", "<C-k>")
-unmap("t", "<C-l>")
 
 map("n", "<leader>oT", function()
   LazyVim.terminal(nil, { cwd = LazyVim.root() })

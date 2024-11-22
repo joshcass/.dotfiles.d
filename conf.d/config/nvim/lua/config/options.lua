@@ -5,6 +5,7 @@
 vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.lazyvim_ruby_formatter = "standardrb"
 vim.g.direnv_silent_load = 1
+vim.g.ruby_host_prog = vim.fn.expand("~/.asdf/shims/neovim-ruby-host")
 
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 999
