@@ -49,6 +49,8 @@
     "tooltip": false,
   },
   "network": {
+    "family": "ipv4",
+    "format": "{ipaddr}",
     "format-wifi": "{ipaddr} ({signalStrength}%)",
     "format-ethernet": "{ipaddr}",
     "tooltip-format": "{ifname} via {gwaddr}",
