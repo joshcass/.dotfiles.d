@@ -10,3 +10,9 @@
 [submodule "theming/Nordic-Polar"]
 	path = theming/Nordic-Polar
 	url = https://github.com/joshcass/Nordic-Polar
+[submodule "conf.d/config/fish/functions/pure"]
+	path = conf.d/config/fish/functions/pure
+	url = git@github.com:pure-fish/pure.git
+[submodule "conf.d/config/fish/functions/z"]
+	path = conf.d/config/fish/functions/z
+	url = git@github.com:jethrokuan/z.git
