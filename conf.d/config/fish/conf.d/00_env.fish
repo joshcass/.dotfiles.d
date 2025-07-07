@@ -16,6 +16,8 @@ set -gx GPG_TTY (tty)
 
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
+set -gx --prepend PATH $HOME/.asdf/shims
+
 set fish_function_path $HOME/.config/fish/functions/pure/functions $fish_function_path
 
 set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_path
@@ -23,5 +25,3 @@ set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_p
 fish_add_path $HOME/.dotfiles.d/scripts.d
 
 direnv hook fish | source
-
-source /opt/asdf-vm/asdf.fish
