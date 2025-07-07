@@ -6,5 +6,6 @@ return {
   } },
   require("which-key").add({
     { "<leader>o", group = "open" },
+    { "<leader>a", group = "ai" },
   }),
 }
