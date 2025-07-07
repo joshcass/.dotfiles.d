@@ -28,16 +28,3 @@ if vim.g.neovide then
     end
   end, { desc = "Toggle big mode" })
 end
-
--- Terminal Mappings
--- Unset lazyvim defaults
-unmap("n", "<leader>ft")
-unmap("n", "<leader>fT")
-
-map("n", "<leader>oT", function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
-end, { desc = "Terminal (Root Dir)" })
-
-map("n", "<leader>ot", function()
-  LazyVim.terminal()
-end, { desc = "Terminal (cwd)" })
