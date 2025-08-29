@@ -10,10 +10,6 @@ set -gx Z_DATA_DIR $HOME/.local/share/z
 
 set -gx Z_EXCLUDE \x5e$HOME\x24
 
-set -gx TAVILY_API_KEY (jq -r '.tavily' $HOME/.ai-tools.json)
-
-set -gx OPENAI_API_KEY (jq -r '.openai' $HOME/.ai-tools.json)
-
 set -gx GPG_TTY (tty)
 
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
