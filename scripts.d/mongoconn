@@ -1,30 +1,23 @@
 #!/bin/bash
 
-case "${1}" in
-pr)
-  cred_path="production_read_only"
-  db_uri="app-production.m5get"
+case ${1} in
+"s")
+  vars=$(heroku config -a special-sauce-staging --json)
+  username=$(echo ${vars} | jq -r '.MONGO_USERNAME')
+  password=$(echo ${vars} | jq -r '.MONGO_PASSWORD')
+  uri=$(echo ${vars} | jq -r '.MONGO_URI')
+  string="mongodb+srv://${username}:${password}@${uri}"
   ;;
-pw)
-  cred_path="production_write"
-  db_uri="app-production.m5get"
-  ;;
-sr)
-  cred_path="staging_read_only"
-  db_uri="staging-a.fjfig"
-  ;;
-sw)
-  cred_path="staging_write"
-  db_uri="staging-a.fjfig"
+"a")
+  if [ -z "$REPORTING_ANALYTICS_PW" ]; then
+    echo "Error: REPORTING_ANALYTICS_PW environment variable is not set"
+    exit 1
+  fi
+  string="mongodb+srv://reporting-analytics-pod:${REPORTING_ANALYTICS_PW}@reportingandanalyticspo.m5get.mongodb.net/bonusly_production"
   ;;
 *)
-  echo "no db selected"
   exit 1
   ;;
 esac
 
-lease=$(vault read recognition_atlas/creds/${cred_path} -format=json)
-creds=$(echo ${lease} | jq -r '.data')
-string="mongodb+srv://$(echo ${creds} | jq -r '.username'):$(echo ${creds} | jq -r '.password')@${db_uri}.mongodb.net/bonusly_production"
-sed -i "s#\"mongodb://localhost:27017/bonusly_production\"#${string}#" $(git rev-parse --show-toplevel)/config/mongoid.yml
-echo ${lease} | jq -r '.lease_id'
+sed -i "s|uri: <%= \"mongodb://localhost[^\"]*\" %>|uri: $string|" "$(git rev-parse --show-toplevel)/config/mongoid.yml"
