@@ -100,6 +100,9 @@ exec sworkstyle &> /tmp/sworkstyle.log
     # screenshot + swappy
     bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
+    # screen recording with wf-recorder and slurp (toggle)
+    bindsym $mod+Shift+v exec sh -c 'if pgrep -x wf-recorder >/dev/null; then killall -s SIGINT wf-recorder; else geometry=$(slurp) && [ -n "$geometry" ] && wf-recorder -g "$geometry" -f ~/Videos/screencast-$(date +%Y%m%d_%H%M%S).mp4; fi'
+
     bindsym XF86AudioMute exec pulsemixer --toggle-mute
     bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5 --max-volume 100
     bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
