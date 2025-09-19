@@ -65,6 +65,11 @@ sudo mkdir -p /usr/share/themes
 sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo ln -sf $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
+fancy_echo "Configuring ly display manager"
+sudo mkdir -p /etc/ly
+sudo cp $SETUP_DIR/conf.d/ly/config.ini /etc/ly/config.ini
+sudo chmod +x /etc/ly/config.ini
+
 fancy_echo "Done."
 
 read -p 'Reboot now ? [y/N]' reboot
