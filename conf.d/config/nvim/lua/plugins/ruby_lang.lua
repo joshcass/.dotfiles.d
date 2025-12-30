@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         solargraph = { enabled = false, mason = false, autostart = false },
+        rubocop = { enabled = false, mason = false, autostart = false },
       },
     },
   },
