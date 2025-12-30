@@ -19,12 +19,12 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu bemenu-run -p run --fn "Arimo Nerd Font 12" --tb "#81A1C1" --tf "#3B4242" --fb "#3B4242" --ff "#ECEFF4" --nb "#3B4242" --nf "#ECEFF4" --hb "#3B4242" --hf "#81A1C1" --fbb "#3B4252" --fbf "#ECEff4" --sb "#3B4252" --sf "#ECEff4" --ab "#3B4252" --af "#ECEff4" | xargs swaymsg exec --
+set $menu $HOME/.dotfiles.d/scripts.d/bemenu-run -p run --fn "Arimo Nerd Font 12" --tb "#81A1C1" --tf "#3B4242" --fb "#3B4242" --ff "#ECEFF4" --nb "#3B4242" --nf "#ECEFF4" --hb "#3B4242" --hf "#81A1C1" --fbb "#3B4252" --fbf "#ECEff4" --sb "#3B4252" --sf "#ECEff4" --ab "#3B4252" --af "#ECEff4" | xargs swaymsg exec --
 
 ### Output configuration
 #
 ##eceff4 Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/jc/.dotfiles.d/theming/wallpaper.jpg fill
+output * bg $HOME/.dotfiles.d/theming/wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -102,6 +102,9 @@ exec sworkstyle &> /tmp/sworkstyle.log
 
     # screen recording with wf-recorder and slurp (toggle)
     bindsym $mod+Shift+v exec sh -c 'if pgrep -x wf-recorder >/dev/null; then killall -s SIGINT wf-recorder; else geometry=$(slurp) && [ -n "$geometry" ] && wf-recorder -g "$geometry" -f ~/Videos/screencast-$(date +%Y%m%d_%H%M%S).mp4; fi'
+
+    # text-to-speech (toggle)
+    bindsym $mod+t exec sh -c 'if pgrep -f "^python3 /usr/sbin/nerd-dictation begin" >/dev/null; then nerd-dictation end; else nerd-dictation begin --simulate-input-tool WTYPE; fi'
 
     bindsym XF86AudioMute exec pulsemixer --toggle-mute
     bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5 --max-volume 100
