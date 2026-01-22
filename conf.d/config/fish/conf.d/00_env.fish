@@ -22,4 +22,6 @@ set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_p
 
 fish_add_path $HOME/.dotfiles.d/scripts.d
 
+fish_add_path $HOME/.local/bin
+
 direnv hook fish | source
