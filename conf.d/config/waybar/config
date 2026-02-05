@@ -18,6 +18,9 @@
     "clock",
     "tray"
   ],
+  "sway/workspaces": {
+    "format": "{name}"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "tooltip": false,
