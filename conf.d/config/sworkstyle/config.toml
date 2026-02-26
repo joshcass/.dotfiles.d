@@ -1,4 +1,5 @@
 [matching]
 'chromium' = ''
 'neovide' = ""
+'/ruby|foreman|rails/' = ""
 '/fish/' = ""
