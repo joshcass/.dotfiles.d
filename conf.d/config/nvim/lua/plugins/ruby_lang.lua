@@ -1,14 +1,5 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        solargraph = { enabled = false, mason = false, autostart = false },
-        rubocop = { enabled = false, mason = false, autostart = false },
-      },
-    },
-  },
-  {
     "nvim-neotest/neotest",
     opts = {
       adapters = {

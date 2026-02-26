@@ -35,3 +35,5 @@
 ehthumbs.db
 Thumbs.db
 
+# mcp servers for claude
+.mcp.json
