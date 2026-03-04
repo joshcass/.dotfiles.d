@@ -16,6 +16,7 @@ gnome-keyring
 grim
 inetutils
 jq
+lemurs
 libnotify
 libreoffice-fresh
 libsecret

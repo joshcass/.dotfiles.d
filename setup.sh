@@ -50,6 +50,7 @@ fancy_echo "Configuring GPG and Yubikey"
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
 fancy_echo "Enabling systemd units"
+systemctl enable lemurs.service
 systemctl --user enable gammastep
 systemctl --user enable pulseaudio
 
