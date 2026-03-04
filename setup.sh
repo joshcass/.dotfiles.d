@@ -49,10 +49,14 @@ fancy_echo "Configuring GPG and Yubikey"
 # need to enable pcscd.socket too
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
+fancy_echo "Installing user systemd units"
+mkdir -p $HOME/.config/systemd/user
+cp $SETUP_DIR/setup.d/nm-applet.service $HOME/.config/systemd/user/
+
 fancy_echo "Enabling user systemd units"
 systemctl --user daemon-reload
-systemctl --user enable gammastep.service
 systemctl --user enable darkman.service
+systemctl --user enable nm-applet.service
 
 fancy_echo "Cloning submodules"
 (
