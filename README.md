@@ -58,7 +58,7 @@ bash ~/.dotfiles.d/setup.sh
 6. Sets Fish as the default shell
 7. Symlinks config files from `conf.d/home/` to `~/` and `conf.d/config/` to `~/.config/`
 8. Configures GPG and YubiKey smartcard support
-9. Enables systemd user units (gammastep, pulseaudio)
+9. Enables systemd user units (gammastep, darkman)
 10. Initializes git submodules (Nordic themes, fish pure prompt, z)
 11. Links Nordic themes to `/usr/share/themes/`
 12. Prompts for a reboot

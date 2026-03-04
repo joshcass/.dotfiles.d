@@ -32,8 +32,6 @@ noto-fonts-emoji
 pavucontrol
 pipewire
 pkgfile
-pulseaudio
-pulseaudio-bluetooth
 slurp
 swappy
 swayidle
