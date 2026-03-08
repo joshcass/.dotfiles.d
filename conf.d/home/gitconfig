@@ -75,5 +75,3 @@ forceSignAnnotated = true
   defaultBranch = main
   templateDir = ~/.dotfiles.d/git
 
-[gitlab]
-	user = joshcass
