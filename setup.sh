@@ -73,6 +73,9 @@ sudo mkdir -p /usr/share/themes
 sudo ln -sfn $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo ln -sfn $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
+fancy_echo "Update repo remote to use SSH "
+git remote set-url origin git@github.com:joshcass/.dotfiles.d.git
+
 fancy_echo "Done."
 
 read -p 'Reboot now ? [y/N]' reboot
