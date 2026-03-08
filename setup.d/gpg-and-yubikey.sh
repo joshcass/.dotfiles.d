@@ -4,7 +4,7 @@
 
 update_gpg_agent() {
   local enable_ssh
-  enable_ssh="enable-ssh-support\npinentry-program $DOTFILES/scripts.d/pinentry\n"
+  enable_ssh="enable-ssh-support"
 
   if ! grep "$enable_ssh" $HOME/.gnupg/gpg-agent.conf >/dev/null 2>&1; then
     echo "Adding '$enable_ssh' to gpg-agent.conf"
