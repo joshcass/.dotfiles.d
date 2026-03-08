@@ -7,13 +7,10 @@
   ],
   "modules-right": [
     "idle_inhibitor",
-    "network",
-    "cpu",
     "memory",
-    "temperature",
-    "disk",
-    "disk#home",
     "pulseaudio",
+    "backlight",
+    "battery",
     "bluetooth",
     "clock",
     "tray"
@@ -35,7 +32,7 @@
   },
   "clock": {
     "format": "{:%d-%m | %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
     "format": " {usage}%",
@@ -49,7 +46,7 @@
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     "format": " {temperatureC}°C",
-    "tooltip": false,
+    "tooltip": false
   },
   "network": {
     "family": "ipv4",
@@ -58,7 +55,7 @@
     "format-ethernet": "{ipaddr}",
     "tooltip-format": "{ifname} via {gwaddr}",
     "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected",
+    "format-disconnected": "Disconnected"
   },
   "pulseaudio": {
     "format": " {volume}%",
@@ -71,10 +68,6 @@
     "format": " {percentage_used}%",
     "path": "/"
   },
-  "disk#home": {
-    "format": " {percentage_used}%",
-    "path": "/home"
-  },
   "bluetooth": {
     "format": "󰂯",
     "format-connected": "󰂱",
@@ -82,5 +75,21 @@
     "tooltip-format-connected": "{device_alias}",
     "format-disabled": "󰂲",
     "on-click": "blueman-manager"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "󱍖 {percent}%"
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
   }
 }

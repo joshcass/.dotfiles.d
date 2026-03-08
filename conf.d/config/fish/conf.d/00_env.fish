@@ -1,20 +1,14 @@
 set -gx DOTFILES $HOME/.dotfiles.d
 
-set -gx EDITOR /usr/bin/neovide
+set -gx EDITOR /usr/bin/vim
 
-set -gx BROWSER /usr/bin/chromium
+set -gx BROWSER /usr/bin/firefox
 
 set -gx Z_DATA $HOME/.local/share/zdata
 
 set -gx Z_DATA_DIR $HOME/.local/share/z
 
 set -gx Z_EXCLUDE \x5e$HOME\x24
-
-set -gx GPG_TTY (tty)
-
-set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-
-set -gx --prepend PATH $HOME/.asdf/shims
 
 set fish_function_path $HOME/.config/fish/functions/pure/functions $fish_function_path
 
@@ -24,4 +18,3 @@ fish_add_path $HOME/.dotfiles.d/scripts.d
 
 fish_add_path $HOME/.local/bin
 
-direnv hook fish | source
