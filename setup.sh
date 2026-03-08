@@ -51,6 +51,9 @@ for item in $SETUP_DIR/conf.d/config/*; do
   ln -sfn "$item" "$HOME/.config/$(basename "$item")"
 done
 
+fancy_echo "Creating symlinks for darkman"
+ln -sfn $SETUP_DIR/conf.d/local/darkman $HOME/.local/share/darkman
+
 fancy_echo "Configuring GPG and Yubikey"
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
