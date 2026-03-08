@@ -3,15 +3,15 @@
 # https://blog.josefsson.org/2017/06/19/openpgp-smartcard-under-gnome-on-debian-9-0-stretch/
 
 update_gpg_agent() {
-    local enable_ssh
-    enable_ssh="enable-ssh-support\npinentry-program $DOTFILES/scripts.d/pinentry\n"
+  local enable_ssh
+  enable_ssh="enable-ssh-support\npinentry-program $DOTFILES/scripts.d/pinentry\n"
 
-    if ! grep "$enable_ssh" $HOME/.gnupg/gpg-agent.conf >/dev/null 2>&1; then
-        echo "Adding '$enable_ssh' to gpg-agent.conf"
-        sh -c "printf $enable_ssh >> $HOME/.gnupg/gpg-agent.conf"
-    else
-        echo "'$enable_ssh' already added to gpg-agent.conf"
-    fi
+  if ! grep "$enable_ssh" $HOME/.gnupg/gpg-agent.conf >/dev/null 2>&1; then
+    echo "Adding '$enable_ssh' to gpg-agent.conf"
+    sh -c "printf $enable_ssh >> $HOME/.gnupg/gpg-agent.conf"
+  else
+    echo "'$enable_ssh' already added to gpg-agent.conf"
+  fi
 }
 
 echo "Adding GPG key"

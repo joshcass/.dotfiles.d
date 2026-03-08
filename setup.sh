@@ -24,10 +24,13 @@ fancy_echo "Installing yay"
 sh $SETUP_DIR/setup.d/yay.sh
 
 fancy_echo "Install aur packages"
-paru -S --noconfirm - <$SETUP_DIR/setup.d/aur.txt
+yay -S --noconfirm - <$SETUP_DIR/setup.d/aur.txt
 
 fancy_echo "Updating pkgfile"
 sudo pkgfile -u
+
+fancy_echo "Updating xdg user dirs"
+xdg-user-dirs-update
 
 fancy_echo "Installing nix"
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
@@ -39,24 +42,24 @@ fancy_echo "Setting Fish as shell"
 sh $SETUP_DIR/setup.d/fish.sh
 
 fancy_echo "Creating symlinks for dotfiles"
-echo "Creating new symlinks"
-ls $SETUP_DIR/conf.d/home | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/home/{} $HOME/.{}
+for item in $SETUP_DIR/conf.d/home/*; do
+  ln -sfn "$item" "$HOME/.$(basename "$item")"
+done
 
 fancy_echo "Creating symlinks for config files"
-ls $SETUP_DIR/conf.d/config | xargs -L 1 -I{} ln -sf $SETUP_DIR/conf.d/config/{} $HOME/.config/{}
+for item in $SETUP_DIR/conf.d/config/*; do
+  ln -sfn "$item" "$HOME/.config/$(basename "$item")"
+done
 
 fancy_echo "Configuring GPG and Yubikey"
-# need to enable pcscd.socket too
 sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 
-fancy_echo "Installing user systemd units"
-mkdir -p $HOME/.config/systemd/user
-cp $SETUP_DIR/setup.d/nm-applet.service $HOME/.config/systemd/user/
-
-fancy_echo "Enabling user systemd units"
+fancy_echo "Enabling systemd units"
 systemctl --user daemon-reload
 systemctl --user enable darkman.service
-systemctl --user enable nm-applet.service
+systemctl enable bluetooth.service
+systemctl enable reflector.service
+systemctl enable cups.service
 
 fancy_echo "Cloning submodules"
 (
@@ -67,8 +70,8 @@ fancy_echo "Cloning submodules"
 
 fancy_echo "Linking themes"
 sudo mkdir -p /usr/share/themes
-sudo ln -sf $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
-sudo ln -sf $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
+sudo ln -sfn $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
+sudo ln -sfn $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
 fancy_echo "Done."
 
