@@ -1,25 +1,17 @@
 [Default Applications]
+application/xhtml+xml=chromium.desktop
+text/html=chromium.desktop
 x-scheme-handler/http=chromium.desktop
 x-scheme-handler/https=chromium.desktop
-x-scheme-handler/ftp=chromium.desktop
-x-scheme-handler/chrome=chromium.desktop
-text/html=chromium.desktop
-application/x-extension-htm=chromium.desktop
-application/x-extension-html=chromium.desktop
-application/x-extension-shtml=chromium.desktop
-application/xhtml+xml=chromium.desktop
-application/x-extension-xhtml=chromium.desktop
-application/x-extension-xht=chromium.desktop
+
+text/plain=neovide.desktop
+
+application/pdf=org.pwmt.zathura.desktop;
+
 image/jpeg=imv.desktop
 image/png=imv.desktop
-text/plain=neovide.desktop
-x-scheme-handler/mailto=firefox.desktop;
-message/rfc822=chromium.desktop
-application/pdf=com.github.jeromerobert.pdfarranger.desktop;libreoffice-draw.desktop;
-application/x-bittorrent=deluge.desktop
-x-scheme-handler/magnet deluge.desktop
-x-scheme-handler/postman=Postman.desktop
+video/mp4=vlc.desktop
+audio/mpeg=vlc.desktop
 
-[Added Associations]
-inode/directory=pcmanfm.desktop;
-x-scheme-handler/trash=pcmanfm.desktop;
+inode/directory=thunar.desktop;
+
