@@ -66,7 +66,7 @@ systemctl enable cups.service
 
 fancy_echo "Cloning submodules"
 (
-  cd "$SETUP_DIR"
+  cd $SETUP_DIR
   git submodule init
   git submodule update --remote
 )
@@ -76,8 +76,11 @@ sudo mkdir -p /usr/share/themes
 sudo ln -sfn $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
 sudo ln -sfn $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
 
-fancy_echo "Update repo remote to use SSH "
-git remote set-url origin git@github.com:joshcass/.dotfiles.d.git
+fancy_echo "Update repo remote to use SSH"
+(
+  cd $SETUP_DIR
+  git remote set-url origin git@github.com:joshcass/.dotfiles.d.git
+)
 
 fancy_echo "Done."
 
