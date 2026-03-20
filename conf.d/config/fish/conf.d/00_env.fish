@@ -16,6 +16,8 @@ set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
 set -gx --prepend PATH $HOME/.asdf/shims
 
+set -g fish_greeting # disable fish greeting
+
 set fish_function_path $HOME/.config/fish/functions/pure/functions $fish_function_path
 
 set fish_function_path $HOME/.config/fish/functions/z/functions $fish_function_path
