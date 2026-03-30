@@ -28,7 +28,7 @@ return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
   opts = {
-    terminal_cmd = "~/.local/bin/claude", -- Point to local installation
+    terminal_cmd = "direnv exec . ~/.local/bin/claude", -- Launch with direnv environment
     git_repo_cwd = true, -- prevent claude from scattering .claude folders all over
     -- Diff Integration
     diff_opts = {
