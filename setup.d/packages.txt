@@ -19,6 +19,7 @@ jq
 libnotify
 libreoffice-fresh
 libsecret
+mako
 man-db
 neovide
 network-manager-applet
