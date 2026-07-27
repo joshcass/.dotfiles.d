@@ -11,6 +11,7 @@ size = 11.0
 bindings = [
   { action = "CreateNewWindow", key = "R", mods = "Shift|Control" },
   { action = "ToggleFullscreen", key = "F11" },
+  { key = "Return", mods = "Shift", chars = "\u001B\r" },
 ]
 
 [scrolling]
