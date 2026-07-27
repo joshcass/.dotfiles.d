@@ -37,3 +37,5 @@ Thumbs.db
 
 # mcp servers for claude
 .mcp.json
+
+**/.claude/settings.local.json
