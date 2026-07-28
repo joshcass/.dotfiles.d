@@ -26,4 +26,10 @@ fish_add_path $HOME/.dotfiles.d/scripts.d
 
 fish_add_path $HOME/.local/bin
 
+fish_add_path $HOME/.local/bin
+
+fish_add_path /opt/homebrew/bin
+
+fish_add_path /opt/homebrew/sbin
+
 direnv hook fish | source
