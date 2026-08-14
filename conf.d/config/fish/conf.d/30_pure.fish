@@ -15,4 +15,5 @@ set --universal pure_color_git_stash pure_color_warning
 
 # Show system time
 set --universal pure_show_system_time true
+set --universal pure_system_time_format '+%T'
 set --universal pure_color_system_time pure_color_warning
