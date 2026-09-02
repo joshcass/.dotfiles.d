@@ -10,8 +10,11 @@ return {
         explorer = {
           tree = false,
           auto_close = true,
+          hidden = true,
           layout = { preset = "default", preview = true },
         },
+        files = { hidden = true },
+        grep = { hidden = true },
       },
     },
   },
