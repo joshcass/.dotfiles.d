@@ -17,8 +17,14 @@ sudo true
 fancy_echo "Cloning dotfiles repo"
 git clone https://github.com/joshcass/.dotfiles.d.git "$SETUP_DIR"
 
+fancy_echo "Configuring pacman"
+sudo install -Dm644 $SETUP_DIR/conf.d/etc/pacman.conf /etc/pacman.conf
+
 fancy_echo "Installing packages"
 sudo pacman -S --needed --noconfirm - <$SETUP_DIR/setup.d/packages.txt
+
+fancy_echo "Configuring reflector"
+sudo install -Dm644 $SETUP_DIR/conf.d/etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf
 
 fancy_echo "Installing yay"
 sh $SETUP_DIR/setup.d/yay.sh
@@ -72,9 +78,9 @@ fancy_echo "Cloning submodules"
 )
 
 fancy_echo "Linking themes"
-sudo mkdir -p /usr/share/themes
-sudo ln -sfn $SETUP_DIR/theming/Nordic /usr/share/themes/nordic
-sudo ln -sfn $SETUP_DIR/theming/Nordic-Polar /usr/share/themes/nordic-polar
+mkdir -p $HOME/.local/share/themes
+ln -sfn $SETUP_DIR/theming/Nordic $HOME/.local/share/themes/nordic
+ln -sfn $SETUP_DIR/theming/Nordic-Polar $HOME/.local/share/themes/nordic-polar
 
 fancy_echo "Update repo remote to use SSH"
 (
