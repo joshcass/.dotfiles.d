@@ -60,9 +60,9 @@ sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 fancy_echo "Enabling systemd units"
 systemctl --user daemon-reload
 systemctl --user enable darkman.service
-systemctl enable bluetooth.service
-systemctl enable reflector.service
-systemctl enable cups.service
+sudo systemctl enable bluetooth.service
+sudo systemctl enable reflector.timer
+sudo systemctl enable cups.service
 
 fancy_echo "Cloning submodules"
 (
