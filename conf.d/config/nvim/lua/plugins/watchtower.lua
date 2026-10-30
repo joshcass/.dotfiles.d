@@ -1,5 +1,5 @@
 return {
-  dir = "~/Documents/watchtower-mode",
+  dir = "~/Documents/watchtower",
   name = "watchtower",
   lazy = false,
   opts = {
