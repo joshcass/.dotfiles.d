@@ -1,5 +1,5 @@
 return {
-  dir = "~/Documents/watchtower",
+  "joshcass/watchtower", -- work-laptop: install from GitHub (main uses a local checkout for dev)
   name = "watchtower",
   lazy = false,
   opts = {
