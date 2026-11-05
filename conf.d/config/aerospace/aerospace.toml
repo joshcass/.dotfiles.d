@@ -1,0 +1,181 @@
+# AeroSpace config, ported from ~/.dotfiles.d/conf.d/config/sway/config
+# Reference: https://nikitabobko.github.io/AeroSpace/guide
+#
+# $mod = cmd. Karabiner (see "AeroSpace" rule in ~/.config/karabiner/karabiner.json)
+# turns physical cmd+<wm key> into cmd+alt+ctrl+<key>, which is what's bound below.
+# That way Karabiner's ctrl+s -> cmd+s (etc.) still reach apps instead of AeroSpace.
+# Exception: F-keys are bound as plain cmd-fN (Karabiner turns remapped F-keys into media keys).
+# Adding a binding here? Add the key to the Karabiner rule's list too.
+
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Accordion is AeroSpace's stand-in for sway's stacking/tabbed layouts
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# sway default: mouse warps to the newly focused output
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# sway default: focus_follows_mouse yes
+focus-follows-mouse.enabled = true
+
+automatically-unhide-macos-hidden-apps = false
+
+# sway drops empty workspaces, so don't keep any alive
+persistent-workspaces = []
+
+on-mode-changed = []
+
+key-mapping.preset = 'qwerty'
+
+# sway: gaps inner 5 (sway also applies inner gaps at the screen edges)
+gaps.inner.horizontal = 5
+gaps.inner.vertical   = 5
+gaps.outer.left       = 5
+gaps.outer.bottom     = 5
+gaps.outer.top        = 5
+gaps.outer.right      = 5
+
+[mode.main.binding]
+    # --- Basics ---
+    # $mod+Return: terminal (new Alacritty window, or launch Alacritty)
+    cmd-alt-ctrl-enter = '''exec-and-forget /Applications/Alacritty.app/Contents/MacOS/alacritty msg create-window || open -n /Applications/Alacritty.app'''
+
+    # $mod+Shift+q: kill
+    cmd-alt-ctrl-shift-q = 'close'
+
+    # $mod+d: launcher. Karabiner sends cmd+d straight to Spotlight.
+
+    # $mod+Shift+c: reload
+    cmd-alt-ctrl-shift-c = 'reload-config'
+
+    # $mod+Shift+e: exit (asks macOS to log out, which shows a confirmation dialog)
+    cmd-alt-ctrl-shift-e = '''exec-and-forget osascript -e 'tell application "System Events" to log out' '''
+
+    # $mod+Ctrl+m: pavucontrol -> Sound settings
+    cmd-alt-ctrl-m = 'exec-and-forget open "x-apple.systempreferences:com.apple.Sound-Settings.extension"'
+
+    # $mod+Shift+Print (grim+slurp+swappy) -> area screenshot opened in Preview for editing
+    cmd-alt-ctrl-shift-p = 'exec-and-forget screencapture -i -P ~/Pictures/screenshot-$(date +%Y%m%d_%H%M%S).png'
+
+    # $mod+Shift+v (wf-recorder toggle) -> macOS screenshot/recording toolbar
+    cmd-alt-ctrl-shift-v = 'exec-and-forget open -a Screenshot'
+
+    # --- Moving around ---
+    cmd-alt-ctrl-h = 'focus left'
+    cmd-alt-ctrl-j = 'focus down'
+    cmd-alt-ctrl-k = 'focus up'
+    cmd-alt-ctrl-l = 'focus right'
+    cmd-alt-ctrl-left  = 'focus left'
+    cmd-alt-ctrl-down  = 'focus down'
+    cmd-alt-ctrl-up    = 'focus up'
+    cmd-alt-ctrl-right = 'focus right'
+
+    cmd-alt-ctrl-shift-h = 'move left'
+    cmd-alt-ctrl-shift-j = 'move down'
+    cmd-alt-ctrl-shift-k = 'move up'
+    cmd-alt-ctrl-shift-l = 'move right'
+    cmd-alt-ctrl-shift-left  = 'move left'
+    cmd-alt-ctrl-shift-down  = 'move down'
+    cmd-alt-ctrl-shift-up    = 'move up'
+    cmd-alt-ctrl-shift-right = 'move right'
+
+    # --- Workspaces ---
+    cmd-alt-ctrl-b = 'workspace-back-and-forth'
+
+    cmd-f1  = 'workspace 1'
+    cmd-f2  = 'workspace 2'
+    cmd-f3  = 'workspace 3'
+    cmd-f4  = 'workspace 4'
+    cmd-f5  = 'workspace 5'
+    cmd-f6  = 'workspace 6'
+    cmd-f7  = 'workspace 7'
+    cmd-f8  = 'workspace 8'
+    cmd-f9  = 'workspace 9'
+    cmd-f10 = 'workspace 10'
+
+    cmd-shift-f1  = 'move-node-to-workspace 1'
+    cmd-shift-f2  = 'move-node-to-workspace 2'
+    cmd-shift-f3  = 'move-node-to-workspace 3'
+    cmd-shift-f4  = 'move-node-to-workspace 4'
+    cmd-shift-f5  = 'move-node-to-workspace 5'
+    cmd-shift-f6  = 'move-node-to-workspace 6'
+    cmd-shift-f7  = 'move-node-to-workspace 7'
+    cmd-shift-f8  = 'move-node-to-workspace 8'
+    cmd-shift-f9  = 'move-node-to-workspace 9'
+    cmd-shift-f10 = 'move-node-to-workspace 10'
+
+    # --- Layout ---
+    cmd-alt-ctrl-s = 'layout v_accordion'                 # layout stacking
+    cmd-alt-ctrl-w = 'layout h_accordion'                 # layout tabbed
+    cmd-alt-ctrl-e = 'layout tiles horizontal vertical'   # layout toggle split
+    cmd-alt-ctrl-f = 'fullscreen'
+    cmd-alt-ctrl-shift-space = 'layout floating tiling'   # floating toggle
+    # $mod+space (focus mode_toggle) and $mod+a (focus parent): AeroSpace has no equivalent
+
+    # --- Scratchpad (approximation: a hidden workspace named S) ---
+    cmd-alt-ctrl-shift-minus = 'move-node-to-workspace S'
+    cmd-alt-ctrl-minus = 'workspace S'
+
+    # --- Resize mode ---
+    cmd-alt-ctrl-r = 'mode resize'
+
+[mode.resize.binding]
+    h = 'resize width -10'
+    j = 'resize height +10'
+    k = 'resize height -10'
+    l = 'resize width +10'
+    left  = 'resize width -10'
+    down  = 'resize height +10'
+    up    = 'resize height -10'
+    right = 'resize width +10'
+    enter = 'mode main'
+    esc   = 'mode main'
+
+# --- for_window: floating apps ---
+[[on-window-detected]]
+    if.app-id = 'com.apple.systempreferences'   # stands in for pavucontrol / blueman
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.keychainaccess'      # stands in for seahorse
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.window-title-regex-substring = '(?i)picture.in.picture'
+    run = 'layout floating'                     # AeroSpace has no sticky
+
+# --- assign: workspace pinning ---
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.firefox'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+    if.app-id = 'io.ungoogled-software.ungoogled-chromium'
+    run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+    if.app-id = 'com.neovide.neovide'
+    run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+    if.app-id = 'org.alacritty'
+    run = 'move-node-to-workspace 4'
