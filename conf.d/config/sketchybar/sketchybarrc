@@ -1,0 +1,104 @@
+#!/bin/bash
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# SketchyBar config: Waybar-style bottom bar for the work laptop.
+# Nord colors from ~/.dotfiles.d/conf.d/config/waybar/style.css
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+BG=0xff2e3440        # bar background
+FG=0xffeceff4        # light text
+DARK=0xff2e3440      # dark text on colored modules
+ACCENT=0xff81a1c1    # module / focused workspace background
+GREY=0xff4c566a      # clock background
+
+sketchybar --bar position=bottom height=25 color=$BG margin=0 y_offset=0 \
+                 corner_radius=0 border_width=0 padding_left=0 padding_right=0 topmost=off
+
+default=(
+  icon.font="Hack Nerd Font:Regular:15.0"
+  label.font="Hack Nerd Font:Regular:13.0"
+  icon.color=$DARK
+  label.color=$DARK
+  padding_left=0
+  padding_right=0
+  icon.padding_left=8
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=8
+  background.height=25
+  background.corner_radius=0
+)
+sketchybar --default "${default[@]}"
+
+##### Left: AeroSpace workspaces (like sway/workspaces) #####
+sketchybar --add event aerospace_workspace_change
+for ws in 1 2 3 4 5 6 7 8 9 10 S; do
+  sketchybar --add item "ws.$ws" left \
+             --set "ws.$ws" icon.drawing=off label="$ws" \
+                   label.color=$FG label.padding_left=7 label.padding_right=7 \
+                   background.color=$ACCENT background.drawing=off drawing=off \
+                   click_script="aerospace workspace $ws"
+done
+# Invisible controller that refreshes every workspace item at once
+sketchybar --add item aerospace left \
+           --set aerospace drawing=off update_freq=5 script="$PLUGIN_DIR/aerospace.sh" \
+           --subscribe aerospace aerospace_workspace_change front_app_switched system_woke
+
+##### Right (added right-to-left): clock, battery, bluetooth, network #####
+sketchybar --add item clock right \
+           --set clock icon.drawing=off label.color=$FG label.padding_left=8 \
+                 background.color=$GREY background.drawing=on \
+                 update_freq=10 script="$PLUGIN_DIR/clock.sh" \
+                 popup.align=right popup.height=20 \
+                 popup.background.color=$BG popup.background.border_color=$ACCENT \
+                 popup.background.border_width=1 popup.background.corner_radius=4 \
+           --subscribe clock mouse.clicked mouse.exited.global
+# Calendar popup rows (filled by clock.sh on click)
+sketchybar --add item cal.title popup.clock \
+           --set cal.title icon.drawing=off label.color=$ACCENT \
+                 label.font="Hack Nerd Font Mono:Bold:13.0" label.padding_left=8
+for i in 0 1 2 3 4 5 6; do
+  sketchybar --add item "cal.$i" popup.clock \
+             --set "cal.$i" icon.drawing=off label.color=$FG \
+                   label.font="Hack Nerd Font Mono:Regular:13.0" label.padding_left=8
+done
+
+sketchybar --add item battery right \
+           --set battery background.color=$ACCENT background.drawing=on \
+                 update_freq=60 script="$PLUGIN_DIR/battery.sh" \
+                 click_script="open 'x-apple.systempreferences:com.apple.Battery-Settings.extension'" \
+           --subscribe battery power_source_change system_woke
+
+sketchybar --add item bluetooth right \
+           --set bluetooth label.drawing=off icon.padding_right=8 \
+                 background.color=$ACCENT background.drawing=on \
+                 update_freq=30 script="$PLUGIN_DIR/bluetooth.sh" \
+                 click_script="open 'x-apple.systempreferences:com.apple.BluetoothSettings'" \
+           --subscribe bluetooth system_woke
+
+sketchybar --add item memory right \
+           --set memory background.color=$ACCENT background.drawing=on \
+                 update_freq=15 script="$PLUGIN_DIR/memory.sh" \
+                 click_script="open -a 'Activity Monitor'"
+
+sketchybar --add item network right \
+           --set network background.color=$ACCENT background.drawing=on \
+                 update_freq=30 script="$PLUGIN_DIR/network.sh" \
+                 click_script="open 'x-apple.systempreferences:com.apple.wifi-settings-extension'" \
+           --subscribe network wifi_change system_woke
+
+sketchybar --add item amphetamine right \
+           --set amphetamine label.drawing=off icon.padding_right=8 \
+                 background.color=$ACCENT background.drawing=on \
+                 update_freq=30 script="$PLUGIN_DIR/amphetamine.sh" \
+           --subscribe amphetamine mouse.clicked system_woke
+
+##### Tray: mirrored macOS menu bar items (needs Screen Recording permission) #####
+TRAY_ITEMS=()   # filled in below; list candidates with: sketchybar --query default_menu_items
+for item in "${TRAY_ITEMS[@]}"; do
+  sketchybar --add alias "$item" right \
+             --set "$item" icon.drawing=off label.drawing=off padding_left=2 padding_right=2 \
+                   alias.color=$FG background.drawing=off
+done
+
+sketchybar --update

@@ -36,13 +36,18 @@ persistent-workspaces = []
 
 on-mode-changed = []
 
+# SketchyBar workspace indicator (see ~/.config/sketchybar/plugins/aerospace.sh)
+exec-on-workspace-change = ['/bin/bash', '-c',
+    '/opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE']
+on-focus-changed = ['exec-and-forget /opt/homebrew/bin/sketchybar --trigger aerospace_workspace_change']
+
 key-mapping.preset = 'qwerty'
 
 # sway: gaps inner 5 (sway also applies inner gaps at the screen edges)
 gaps.inner.horizontal = 5
 gaps.inner.vertical   = 5
 gaps.outer.left       = 5
-gaps.outer.bottom     = 5
+gaps.outer.bottom     = 30   # 25px SketchyBar + 5px gap
 gaps.outer.top        = 5
 gaps.outer.right      = 5
 
