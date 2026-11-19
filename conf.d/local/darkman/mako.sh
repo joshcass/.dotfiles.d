@@ -2,9 +2,9 @@
 
 case "$1" in
 dark)
-  makoctl set-mode dark
+  makoctl mode -s dark
   ;;
 light)
-  makoctl set-mode light
+  makoctl mode -s light
   ;;
 esac
