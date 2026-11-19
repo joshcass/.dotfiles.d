@@ -93,6 +93,11 @@ sketchybar --add item amphetamine right \
                  update_freq=30 script="$PLUGIN_DIR/amphetamine.sh" \
            --subscribe amphetamine mouse.clicked system_woke
 
+# 4px gap between right-side modules (waybar "spacing": 4)
+for item in clock battery bluetooth memory network amphetamine; do
+  sketchybar --set "$item" padding_left=4
+done
+
 ##### Tray: mirrored macOS menu bar items (needs Screen Recording permission) #####
 TRAY_ITEMS=()   # filled in below; list candidates with: sketchybar --query default_menu_items
 for item in "${TRAY_ITEMS[@]}"; do
