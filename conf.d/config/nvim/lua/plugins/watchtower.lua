@@ -11,6 +11,6 @@ return {
     },
   },
   keys = {
-    { "<leader>gw", "<cmd>Watchtower<cr>", desc = "Watchtower (diff view)" },
+    { "<leader>wW", "<cmd>Watchtower<cr>", desc = "Watchtower (diff view)" },
   },
 }
