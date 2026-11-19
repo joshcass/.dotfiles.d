@@ -7,9 +7,9 @@ Personal dotfiles and system setup for an Arch Linux + Sway (Wayland) desktop en
 ```
 .dotfiles.d/
 ├── conf.d/            # Configuration files
-│   ├── config/        # Symlinked to ~/.config/ (sway, waybar, fish, nvim, alacritty, etc.)
+│   ├── config/        # Symlinked to ~/.config/ (sway, waybar, fish, nvim, ghostty, etc.)
 │   ├── home/          # Symlinked to ~/ as dotfiles (gitconfig, gitignore-global, pryrc, rspec)
-│   └── local/         # Dark/light mode toggle scripts for darkman (alacritty, gtk, mako)
+│   └── local/         # Dark/light mode toggle scripts for darkman (gtk, mako)
 ├── git/               # Git hooks (post-checkout, pre-push) and helper scripts (better-push, cleanup, email-guess)
 ├── scripts.d/         # Wrapper scripts for bemenu-run, chromium, slack
 ├── setup.d/           # Setup helpers: package lists, yay/fish/gpg install scripts
@@ -21,7 +21,7 @@ Personal dotfiles and system setup for an Arch Linux + Sway (Wayland) desktop en
 
 - **Window manager:** Sway with swaylock, sworkstyle, and swayidle
 - **Bar:** Waybar
-- **Terminal:** Alacritty with Solarized dark/light themes
+- **Terminal:** Ghostty with built-in Solarized themes (follows the system color scheme)
 - **Shell:** Fish with pure prompt and z directory jumping
 - **Editor:** Neovim (LazyVim) + Neovide
 - **Notifications:** Mako

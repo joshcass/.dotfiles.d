@@ -66,6 +66,7 @@ sh $SETUP_DIR/setup.d/gpg-and-yubikey.sh
 fancy_echo "Enabling systemd units"
 systemctl --user daemon-reload
 systemctl --user enable darkman.service
+systemctl --user enable app-com.mitchellh.ghostty.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable cups.service

@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term ghostty +new-window
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -237,7 +237,7 @@ assign [app_id="firefox"] workspace number 1
 assign [app_id="chromium"] workspace number 1
 assign [app_id="Slack"] workspace number 1
 assign [app_id="neovide"] workspace number 2
-assign [app_id="Alacritty"] workspace number 3
+assign [app_id="com.mitchellh.ghostty"] workspace number 3
 
 # Status Bar:
 #
